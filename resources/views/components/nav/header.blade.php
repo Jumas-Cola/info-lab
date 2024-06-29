@@ -5,8 +5,8 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <h1>Scholar</h1>
+                    <a href="{{ route('home') }}" class="logo">
+                        <h1>InfoLab</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->
@@ -20,7 +20,10 @@
                     <!-- ***** Serach Start ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('home') }}" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('base-convert') }}">Калькуляторы</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('turing-machine') }}">Машина Тьюринга</a></li>
+                        <li class="scroll-to-section"><a href="{{ route('normal-algo') }}">Нормальные алгоритмы</a></li>
                         <li class="scroll-to-section"><a href="#services">Services</a></li>
                         <li class="scroll-to-section"><a href="#courses">Courses</a></li>
                         <li class="scroll-to-section"><a href="#team">Team</a></li>
@@ -37,3 +40,6 @@
     </div>
 </header>
 <!-- ***** Header Area End ***** -->
+
+<div class="main-banner" id="top">
+</div>
