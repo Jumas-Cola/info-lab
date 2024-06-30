@@ -1,5 +1,5 @@
 <x-main-layout>
-    <div class="container">
+    <div class="container mt-3">
         <div class="card mt-2">
             <div class="card-body">
                 <h5 class="card-title text-center">Машина Тьюринга</h5>

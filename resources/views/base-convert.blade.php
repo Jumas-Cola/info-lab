@@ -15,7 +15,7 @@
             white-space: nowrap;
         }
     </style>
-    <div class="container">
+    <div class="container mt-3">
         <div x-data="toDecBase" class="card mt-2">
             <div class="card-body">
                 <h5 class="card-title">Перевод числа в десятичную систему счисления</h5>
@@ -109,9 +109,12 @@
 
         document.addEventListener('alpine:init', () => {
             Alpine.data('toDecBase', () => ({
-                num: 0,
-                base: 0,
+                num: 1000,
+                base: 2,
                 res: '',
+                init() {
+                    this.changeBase();
+                },
                 changeBase() {
                     if (this.base <= 0) {
                         return;
@@ -138,10 +141,13 @@
             }))
 
             Alpine.data('baseSwitch', () => ({
-                num: 0,
-                base: 0,
+                num: 8,
+                base: 2,
                 res: '',
                 resArr: [],
+                init() {
+                    this.changeBase();
+                },
                 changeBase() {
                     if (this.base <= 0) {
                         return;

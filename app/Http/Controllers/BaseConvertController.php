@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BaseConvert extends Controller
+class BaseConvertController extends Controller
 {
     public function index()
     {

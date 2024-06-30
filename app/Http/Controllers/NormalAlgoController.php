@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class TuringMachine extends Controller
+class NormalAlgoController extends Controller
 {
     public function index()
     {
-        return view('turing-machine');
+        return view('normal-algo');
     }
 }

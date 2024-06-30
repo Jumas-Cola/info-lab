@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-
     <meta charset="utf-8">
+    <meta name="description" content="{{ $description ?? config('app.name', 'Laravel') }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <title>Scholar - Online School HTML5 Template</title>
+    <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
+
 
     @vite(['resources/css/app.scss'])
 
@@ -38,11 +38,11 @@ https://templatemo.com/tm-586-scholar
     <!-- </div> -->
     <!-- ***** Preloader End ***** -->
 
-    <x-nav.header/>
+    <x-nav.header />
 
     {{ $slot }}
 
-    <x-nav.footer/>
+    <x-nav.footer />
 
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->

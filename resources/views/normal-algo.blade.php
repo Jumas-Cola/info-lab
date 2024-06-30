@@ -1,8 +1,8 @@
 <x-main-layout>
-    <div class="container">
+    <div class="container mt-3">
         <div class="card mt-2">
             <div class="card-body">
-                <h5 class="card-title text-center">Машина Тьюринга</h5>
+                <h5 class="card-title text-center">Нормальные алгоритмы</h5>
 
                 <div class="row justify-content-center mt-2">
                     <label class="col-8" for="tape">Tape:</label>
