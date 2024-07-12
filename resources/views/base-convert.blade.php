@@ -65,7 +65,7 @@
                                 @click="changeBase">Перевести</button>
                             <div x-show="resArr.length > 0" class="mt-3">
                                 <label for="inputRes" class="form-label">Ответ</label>
-                                <input type="number" class="form-control" id="inputRes" type="number" x-model="res">
+                                <input type="text" class="form-control" id="inputRes" x-model="res">
                                 <div class="form-text">Остатки в обратном порядке</div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                         </div>
                                         <div class="base-solution"
                                             :style="`left:${102 + 50*n}px; top:${31*n}px;border-left:1px solid black;border-bottom:1px solid black;`"
-                                            x-text="base">
+                                            x-text="currentBase">
                                         </div>
                                         <div class="base-solution" :id="`minus${n}`"
                                             :style="`left:${50 + 50*n}px; top:${31 + 31*n}px;`" x-text="step.minus">
@@ -112,11 +112,12 @@
                 num: 1000,
                 base: 2,
                 res: '',
+                resArr: [],
                 init() {
                     this.changeBase();
                 },
                 changeBase() {
-                    if (this.base <= 0) {
+                    if (this.base <= 1) {
                         return;
                     }
                     const res = document.getElementById('resultToDecBase');
@@ -143,15 +144,52 @@
             Alpine.data('baseSwitch', () => ({
                 num: 8,
                 base: 2,
+                currentBase: 2,
                 res: '',
                 resArr: [],
+                transNums: {
+                    10: 'A',
+                    11: 'B',
+                    12: 'C',
+                    13: 'D',
+                    14: 'E',
+                    15: 'F',
+                    16: 'G',
+                    17: 'H',
+                    18: 'I',
+                    19: 'J',
+                    20: 'K',
+                    21: 'L',
+                    22: 'M',
+                    23: 'N',
+                    24: 'O',
+                    25: 'P',
+                    26: 'Q',
+                    27: 'R',
+                    28: 'S',
+                    29: 'T',
+                    30: 'U',
+                    31: 'V',
+                    32: 'W',
+                    33: 'X',
+                    34: 'Y',
+                    35: 'Z',
+                },
                 init() {
                     this.changeBase();
                 },
+                numToChar(num) {
+                    if (num < 10 || this.transNums[num] == undefined) {
+                        return num;
+                    } else {
+                        return this.transNums[num];
+                    }
+                },
                 changeBase() {
-                    if (this.base <= 0) {
+                    if (this.base <= 1) {
                         return;
                     }
+                    this.currentBase = this.base
                     const res = document.getElementById('resultBaseSwitch');
                     this.resArr = [];
                     this.res = '';
@@ -164,7 +202,7 @@
                             minus: divmodArr[0] * this.base,
                             ost: ost,
                         });
-                        this.res = ost + this.res
+                        this.res = this.numToChar(ost) + this.res
                         num = divmodArr[0];
                     }
 
@@ -173,7 +211,7 @@
                         minus: 0,
                         ost: num % this.base,
                     });
-                    this.res = num % this.base + this.res
+                    this.res = this.numToChar(num % this.base) + this.res
                     if (num >= this.base) {
                         this.resArr.push({
                             num: num,
@@ -182,7 +220,6 @@
                         });
                         this.res = '1' + this.res
                     }
-                    console.log(this.resArr);
                 }
             }))
         })

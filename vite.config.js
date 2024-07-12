@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 import path from 'path';
 
 export default defineConfig({
@@ -12,6 +13,14 @@ export default defineConfig({
     laravel({
       input: ['resources/css/app.scss', 'resources/js/app.js'],
       refresh: true,
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'resources/js/brython.min.js',
+          dest: 'assets',
+        },
+      ],
     }),
   ],
 });
