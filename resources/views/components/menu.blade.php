@@ -16,7 +16,7 @@
     <ul class="nav">
         <li class="nav-item"><a href="{{ route('home') }}" class="{{ Route::is('home') ? 'active' : '' }}">Главная</a>
         </li>
-        <li class="nav-item"><a href="#services">Лаборатоные работы</a></li>
+        <li class="nav-item"><a href="{{ route('hello-world-lab') }}">Лаборатоные работы</a></li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle d-flex align-items-center {{ Route::is('calc.*') ? 'active' : '' }}"
                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

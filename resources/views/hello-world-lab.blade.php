@@ -1,40 +1,54 @@
 <x-main-layout>
-    <script type="text/javascript" src="/build/assets/brython.min.js"></script>
-    <div class="container mt-3">
-        <div onload="brython()" class="card mt-2">
-            <code>
-                <pre>
-                def fib(n):
-                    n = int(n)
-                    if n == 1:
-                        return 1
-                    elif n == 1:
-                        return 1
-                    else:
-                        return fib(n-1) + fib(n-2)
-                </pre>
-            </code>
+    <x-coderunner.code-editor />
 
-            <script type="text/python">
-            from browser import document, alert
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('codeRunner', () => ({
+                editor: undefined,
+                input: document.querySelector('#input'),
+                init() {
+                    this.editor = new EditorView({
+                        extensions: [basicSetup, python()],
+                        parent: document.querySelector('#editor'),
+                    });
 
-            def echo(event):
-                alert(fib(document["zone"].value))
+                    this.input.value = 'Name'
 
-            def fib(n):
-                n = int(n)
-                if n == 1:
-                    return 1
-                elif n == 2:
-                    return 1
-                else:
-                    return fib(n-1) + fib(n-2)
+                    this.editor.dispatch({
+                        changes: {
+                            from: 0,
+                            to: this.editor.state.doc.length,
+                            insert: `import sys
 
-            document["mybutton"].bind("click", echo)
-            </script>
+def hello_world(name):
+  print(...)
 
-            <input id="zone"><button id="mybutton">click !</button>
-
-        </div>
-    </div>
+hello_world(sys.stdin.read())
+                            `,
+                        }
+                    })
+                },
+                run() {
+                    let code = this.editor.state.doc.toString()
+                    document.getElementById('codeToRun').value = code
+                    document.getElementById('runButton').click()
+                },
+                tests: [{
+                        input: 'John',
+                        output: 'Hello John'
+                    },
+                    {
+                        input: 'Van',
+                        output: 'Hello Van'
+                    },
+                ],
+                runTests() {
+                    let code = this.editor.state.doc.toString()
+                    document.getElementById('codeToRun').value = code
+                    document.getElementById('tests').value = JSON.stringify(this.tests)
+                    document.getElementById('runTestsButton').click()
+                }
+            }))
+        })
+    </script>
 </x-main-layout>
