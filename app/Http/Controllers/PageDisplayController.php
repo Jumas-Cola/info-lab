@@ -9,14 +9,14 @@ class PageDisplayController extends Controller
 {
     public function index(PageRepository $pageRepository)
     {
-        $pages = $pageRepository->published()->orderBy('position')->paginate();
+        $pages = $pageRepository->notHidden()->whereNull('parent_id')->published()->orderBy('position')->paginate();
 
         return view('site.page.index', ['pages' => $pages]);
     }
 
     public function show(string $slug, PageRepository $pageRepository): View
     {
-        $page = $pageRepository->forSlug($slug);
+        $page = $pageRepository->forNestedSlug($slug);
 
         if (! $page) {
             abort(404);

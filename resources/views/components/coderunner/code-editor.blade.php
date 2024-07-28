@@ -3,7 +3,7 @@
     <script type="text/javascript" src="/build/assets/brython_stdlib.js"></script>
     @vite(['resources/js/codemirror.js'])
 
-    <div class="container mt-3" x-data="codeRunner">
+    <div class="mt-3" x-data="codeRunner">
         <div class="fs-5">
             Напишите код здесь:
         </div>

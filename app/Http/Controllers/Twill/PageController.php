@@ -10,12 +10,13 @@ use A17\Twill\Services\Listings\TableColumns;
 use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Http\Controllers\Admin\NestedModuleController as BaseModuleController;
+use A17\Twill\Services\Forms\Fields\Checkbox;
 
 class PageController extends BaseModuleController
 {
     protected $moduleName = 'pages';
     protected $showOnlyParentItemsInBrowsers = true;
-    protected $nestedItemsDepth = 1;
+    protected $nestedItemsDepth = 3;
     /**
      * This method can be used to enable/disable defaults. See setUpController in the docs for available options.
      */
@@ -26,6 +27,17 @@ class PageController extends BaseModuleController
         $this->withoutLanguageInPermalink();
     }
 
+    protected function form(?int $id, TwillModelContract $item = null): array
+    {
+        $item = $this->repository->getById($id, $this->formWith, $this->formWithCount);
+
+        if (!empty($item->ancestorsSlug)) {
+            $this->permalinkBase .= "/" . $item->ancestorsSlug;
+        }
+
+        return parent::form($id, $item);
+    }
+
     /**
      * See the table builder docs for more information. If you remove this method you can use the blade files.
      * When using twill:module:make you can specify --bladeForm to use a blade form instead.
@@ -33,6 +45,10 @@ class PageController extends BaseModuleController
     public function getForm(TwillModelContract $model): Form
     {
         $form = parent::getForm($model);
+
+        $form->add(
+            Checkbox::make()->name('hidden')->label('Hide from blog')
+        );
 
         $form->add(
             Input::make()->name('description')->label('Description')

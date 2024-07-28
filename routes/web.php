@@ -19,8 +19,6 @@ Route::get('/turing-machine', [TuringMachineController::class, 'index'])
 Route::get('/normal-algo', [NormalAlgoController::class, 'index'])
     ->name('calc.normal-algo');
 
-Route::get('/hello-world-lab', [HelloWorldLabController::class, 'index'])
-    ->name('hello-world-lab');
-
-Route::get('pages/{slug}', [PageDisplayController::class, 'show'])->name('frontend.page');
+Route::get('pages/{slug}', [PageDisplayController::class, 'show'])->name('frontend.page')->where('slug', '.*');
 Route::get('pages', [PageDisplayController::class, 'index'])->name('pages');
+Route::get('pages/laboratornye', [PageDisplayController::class, 'show'])->name('labs');

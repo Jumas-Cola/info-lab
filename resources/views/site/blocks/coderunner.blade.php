@@ -1,4 +1,4 @@
-<x-main-layout>
+<div>
     <x-coderunner.code-editor />
 
     <script>
@@ -12,19 +12,13 @@
                         parent: document.querySelector('#editor'),
                     });
 
-                    this.input.value = 'Name'
+                    this.input.value = "{{$block->content['default_input']}}"
 
                     this.editor.dispatch({
                         changes: {
                             from: 0,
                             to: this.editor.state.doc.length,
-                            insert: `import sys
-
-def hello_world(name):
-  print(...)
-
-hello_world(sys.stdin.read())
-                            `,
+                            insert: `{!!$block->content['default_code']!!}`,
                         }
                     })
                 },
@@ -33,14 +27,13 @@ hello_world(sys.stdin.read())
                     document.getElementById('codeToRun').value = code
                     document.getElementById('runButton').click()
                 },
-                tests: [{
-                        input: 'John',
-                        output: 'Hello John'
-                    },
-                    {
-                        input: 'Van',
-                        output: 'Hello Van'
-                    },
+                tests: [
+                  @foreach($block->children as $case)
+                      {
+                          input: "{{$case->content['input']}}",
+                          output: "{{$case->content['output']}}"
+                      },
+                  @endforeach
                 ],
                 runTests() {
                     let code = this.editor.state.doc.toString()
@@ -51,4 +44,4 @@ hello_world(sys.stdin.read())
             }))
         })
     </script>
-</x-main-layout>
+</div>
