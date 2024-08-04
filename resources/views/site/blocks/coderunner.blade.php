@@ -1,15 +1,15 @@
 <div>
-    <x-coderunner.code-editor />
+    <x-coderunner.code-editor :block="$block" />
 
     <script>
         document.addEventListener('alpine:init', () => {
-            Alpine.data('codeRunner', () => ({
+            Alpine.data('codeRunner_{{$block->id}}', () => ({
                 editor: undefined,
-                input: document.querySelector('#input'),
+                input: document.querySelector('#input_{{$block->id}}'),
                 init() {
                     this.editor = new EditorView({
                         extensions: [basicSetup, python()],
-                        parent: document.querySelector('#editor'),
+                        parent: document.querySelector('#editor_{{$block->id}}'),
                     });
 
                     this.input.value = "{{$block->content['default_input']}}"
@@ -24,8 +24,8 @@
                 },
                 run() {
                     let code = this.editor.state.doc.toString()
-                    document.getElementById('codeToRun').value = code
-                    document.getElementById('runButton').click()
+                    document.getElementById('codeToRun_{{$block->id}}').value = code
+                    document.getElementById('runButton_{{$block->id}}').click()
                 },
                 tests: [
                   @foreach($block->children as $case)
@@ -37,9 +37,9 @@
                 ],
                 runTests() {
                     let code = this.editor.state.doc.toString()
-                    document.getElementById('codeToRun').value = code
-                    document.getElementById('tests').value = JSON.stringify(this.tests)
-                    document.getElementById('runTestsButton').click()
+                    document.getElementById('codeToRun_{{$block->id}}').value = code
+                    document.getElementById('tests_{{$block->id}}').value = JSON.stringify(this.tests)
+                    document.getElementById('runTestsButton_{{$block->id}}').click()
                 }
             }))
         })
