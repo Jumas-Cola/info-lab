@@ -6,10 +6,7 @@
     <!-- ***** Logo End ***** -->
     <!-- ***** Serach Start ***** -->
     <div class="search-input">
-        <form id="search" action="#">
-            <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
-            <i class="fa fa-search"></i>
-        </form>
+        <x-nav.search />
     </div>
     <!-- ***** Serach Start ***** -->
     <!-- ***** Menu Start ***** -->
@@ -35,11 +32,11 @@
         <li class="nav-item"><a href="{{ route('pages') }}" class="{{ Route::is('pages') ? 'active' : '' }}">Блог</a>
         </li>
         @foreach ($links as $link)
-            <li class="nav-item">
-                <a href="{{ route('frontend.page', [$link->getRelated('page')->first()->slug]) }}">
-                    {{ $link->title }}
-                </a>
-            </li>
+        <li class="nav-item">
+            <a href="{{ route('frontend.page', [$link->getRelated('page')->first()->slug]) }}">
+                {{ $link->title }}
+            </a>
+        </li>
         @endforeach
     </ul>
     <a class='menu-trigger'>
