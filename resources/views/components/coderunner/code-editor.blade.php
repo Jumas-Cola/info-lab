@@ -3,20 +3,20 @@
     <script type="text/javascript" src="/build/assets/brython_stdlib.js"></script>
     @vite(['resources/js/codemirror.js'])
 
-    <div class="mt-3" x-data="codeRunner_{{$block->id}}">
+    <div class="mt-3" x-data="codeRunner_{{ $block->id }}">
         <div class="fs-5">
             Напишите код здесь:
         </div>
 
-        <div id="editor_{{$block->id}}">
+        <div id="editor_{{ $block->id }}">
         </div>
 
         <div class="row mt-3">
             <div class="col">
-                <textarea class="form-control" id="input_{{$block->id}}" rows="5"></textarea>
+                <textarea class="form-control" id="input_{{ $block->id }}" rows="5"></textarea>
             </div>
             <div class="col">
-                <textarea class="form-control" id="output_{{$block->id}}" rows="5"></textarea>
+                <textarea class="form-control" id="output_{{ $block->id }}" rows="5"></textarea>
             </div>
         </div>
 
@@ -30,14 +30,14 @@
             </button>
         @endif
 
-        <div class="mt-3 fs-5" id="testResult_{{$block->id}}">
+        <div class="mt-3 fs-5" id="testResult_{{ $block->id }}">
         </div>
     </div>
 
     <div onload="brython()" class="d-none">
-        <textarea id="codeToRun_{{$block->id}}" rows="0" cols="0">
+        <textarea id="codeToRun_{{ $block->id }}" rows="0" cols="0">
         </textarea>
-        <textarea id="tests_{{$block->id}}" rows="0" cols="0">
+        <textarea id="tests_{{ $block->id }}" rows="0" cols="0">
         </textarea>
         <script type="text/python">
             from browser import document, alert
@@ -54,12 +54,12 @@
                 output = document["output_{{$block->id}}"]
                 try:
                     exec(code)
+                    output.value = stdout_buffer.getvalue()
                 except Exception as e:
                     output.value = f"Error: {e}"
                 finally:
                     sys.stdout = sys.__stdout__
 
-                output.value = stdout_buffer.getvalue()
 
             def run_tests(event):
                 tests = json.loads(document["tests_{{$block->id}}"].value)
@@ -96,7 +96,7 @@
             document["runTestsButton_{{$block->id}}"].bind("click", run_tests)
         </script>
 
-        <button id="runButton_{{$block->id}}"></button>
-        <button id="runTestsButton_{{$block->id}}"></button>
+        <button id="runButton_{{ $block->id }}"></button>
+        <button id="runTestsButton_{{ $block->id }}"></button>
     </div>
 </div>
