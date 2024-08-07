@@ -1,46 +1,55 @@
-<nav class="main-nav">
-    <!-- ***** Logo Start ***** -->
-    <a href="{{ route('home') }}" class="logo">
-        <h1>{{ $siteSettings['logo'] }}</h1>
-    </a>
-    <!-- ***** Logo End ***** -->
-    <!-- ***** Serach Start ***** -->
-    <div class="search-input">
-        <x-nav.search />
-    </div>
-    <!-- ***** Serach Start ***** -->
-    <!-- ***** Menu Start ***** -->
-    <ul class="nav">
-        <li class="nav-item"><a href="{{ route('home') }}" class="{{ Route::is('home') ? 'active' : '' }}">Главная</a>
-        </li>
-        <li class="nav-item"><a href="{{ route('labs') }}">Лабораторные работы</a></li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-flex align-items-center {{ Route::is('calc.*') ? 'active' : '' }}"
-                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Калькуляторы
-            </a>
-            <ul class="dropdown-menu">
-                <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.base-convert') }}">Перевод системы
-                        счисления</a></li>
-                <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.turing-machine') }}">Машина
-                        Тьюринга</a>
+<nav class="main-nav navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <!-- ***** Logo Start ***** -->
+        <a class="navbar-brand logo" href="{{ route('home') }}">
+            <h1>{{ $siteSettings['logo'] }}</h1>
+        </a>
+        <!-- ***** Logo End ***** -->
+        <!-- ***** Serach Start ***** -->
+        <div class="search-input">
+            <x-nav.search />
+        </div>
+        <!-- ***** Serach Start ***** -->
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse ms-auto" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a href="{{ route('home') }}"
+                        class="text-white nav-link {{ Route::is('home') ? 'active' : '' }}">Главная</a>
                 </li>
-                <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.normal-algo') }}">Нормальные
-                        алгоритмы</a></li>
+                <li class="nav-item"><a class="text-white nav-link" href="{{ route('labs') }}">Лабораторные работы</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="text-white nav-link dropdown-toggle {{ Route::is('calc.*') ? 'active' : '' }}"
+                        href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Калькуляторы
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.base-convert') }}">Перевод
+                                системы
+                                счисления</a></li>
+                        <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.turing-machine') }}">Машина
+                                Тьюринга</a>
+                        </li>
+                        <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.normal-algo') }}">Нормальные
+                                алгоритмы</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="{{ route('pages') }}"
+                        class="text-white nav-link {{ Route::is('pages') ? 'active' : '' }}">Блог</a>
+                </li>
+                @foreach ($links as $link)
+                    <li class="nav-item">
+                        <a class="text-white nav-link"
+                            href="{{ route('frontend.page', [$link->getRelated('page')->first()->slug]) }}">
+                            {{ $link->title }}
+                        </a>
+                    </li>
+                @endforeach
             </ul>
-        </li>
-        <li class="nav-item"><a href="{{ route('pages') }}" class="{{ Route::is('pages') ? 'active' : '' }}">Блог</a>
-        </li>
-        @foreach ($links as $link)
-        <li class="nav-item">
-            <a href="{{ route('frontend.page', [$link->getRelated('page')->first()->slug]) }}">
-                {{ $link->title }}
-            </a>
-        </li>
-        @endforeach
-    </ul>
-    <a class='menu-trigger'>
-        <span>Menu</span>
-    </a>
-    <!-- ***** Menu End ***** -->
+        </div>
+    </div>
 </nav>

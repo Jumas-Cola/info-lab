@@ -1,6 +1,6 @@
 {
   "resources/css/app.scss": {
-    "file": "assets/app-BzL8nZJ5.css",
+    "file": "assets/app-CS9KtMl1.css",
     "src": "resources/css/app.scss",
     "isEntry": true
   },
@@ -129,12 +129,12 @@
     "src": "resources/images/testimonial-author.jpg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BjEKU6QZ.js",
+    "file": "assets/app-BIKP9KoX.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-BzL8nZJ5.css"
+      "assets/app-CS9KtMl1.css"
     ],
     "assets": [
       "assets/banner-bg-qWJavGRi.jpg",
