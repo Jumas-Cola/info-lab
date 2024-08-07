@@ -14,4 +14,4 @@ jobs:
           server: vh428.timeweb.ru
           username: cp17145
           password: ${{ secrets.ftp_password }}
-          server-dir: /public_html/
+          server-dir: /info-lab/
