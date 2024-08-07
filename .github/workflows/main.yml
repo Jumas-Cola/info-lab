@@ -24,6 +24,7 @@ jobs:
           git push
 
   web-deploy:
+    needs: build
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
