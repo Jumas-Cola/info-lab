@@ -20,7 +20,7 @@
             @foreach ($page->children as $child)
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img class="card-img-top" width="100%" height="225" src="{{ $page->image('cover') }}"/>
+                        <img class="card-img-top" width="100%" height="225" src="{{ $child->image('cover') }}"/>
                         <div class="card-body">
                             <p class="fs-4">{{ $child->title }}</p>
                             <p class="card-text">{{ Str::limit(strip_tags($child->renderBlocks())) }}</p>
