@@ -1,8 +1,8 @@
 <nav class="main-nav navbar navbar-expand-lg">
     <div class="container-fluid">
         <!-- ***** Logo Start ***** -->
-        <a class="navbar-brand logo" href="{{ route('home') }}">
-            <h1>{{ $siteSettings['logo'] }}</h1>
+        <a class="navbar-brand" href="{{ route('home') }}">
+            <span class="text-white fs-1 fw-bold">{{ $siteSettings['logo'] }}</span>
         </a>
         <!-- ***** Logo End ***** -->
         <!-- ***** Serach Start ***** -->
@@ -42,12 +42,12 @@
                         class="text-white nav-link {{ Route::is('pages') ? 'active' : '' }}">Блог</a>
                 </li>
                 @foreach ($links as $link)
-                    <li class="nav-item">
-                        <a class="text-white nav-link"
-                            href="{{ route('frontend.page', [$link->getRelated('page')->first()->slug]) }}">
-                            {{ $link->title }}
-                        </a>
-                    </li>
+                <li class="nav-item">
+                    <a class="text-white nav-link"
+                        href="{{ route('frontend.page', [$link->getRelated('page')->first()->slug]) }}">
+                        {{ $link->title }}
+                    </a>
+                </li>
                 @endforeach
             </ul>
         </div>

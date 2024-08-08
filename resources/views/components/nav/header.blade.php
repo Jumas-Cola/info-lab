@@ -1,5 +1,5 @@
 <!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky">
+<header class="main-banner header-area header-sticky mb-6">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -9,6 +9,3 @@
     </div>
 </header>
 <!-- ***** Header Area End ***** -->
-
-<div class="main-banner" id="top">
-</div>
