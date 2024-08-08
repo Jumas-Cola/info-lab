@@ -5,10 +5,12 @@ name: 🚀 Deploy website on push
 permissions:
   contents: write
 jobs:
-  install-laravel-dependencies:
+  install-laravel-deps:
     name: Install Laravel dependencies
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Install dependencies
         uses: php-actions/composer@v6
         with:
@@ -16,11 +18,11 @@ jobs:
           args: --profile --ignore-platform-reqs
 
   build-frontend:
-    name: Build
+    name: Build frontend
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Set up Node.js
         uses: actions/setup-node@v3
       - name: Install dependencies
@@ -35,7 +37,7 @@ jobs:
           git push
 
   web-deploy:
-    needs: build
+    needs: [build-frontend, install-laravel-deps]
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
