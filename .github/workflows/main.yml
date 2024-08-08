@@ -5,33 +5,22 @@ name: 🚀 Deploy website on push
 permissions:
   contents: write
 jobs:
-  install-laravel-deps:
-    name: Install Laravel dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Install dependencies
-        uses: php-actions/composer@v6
-        with:
-          php_version: '8.3'
-          dev: no
-          args:
-            --profile --ignore-platform-reqs -q --no-ansi --no-interaction
-            --no-scripts --no-progress --prefer-dist
-
   build-frontend:
     name: Build frontend
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Get latest code
         uses: actions/checkout@v4
+
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
+
       - name: Install dependencies
         run: npm ci
+
       - name: Build
         run: npm run build
+
       - name: Commit build
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -40,14 +29,14 @@ jobs:
           git push
 
   web-deploy:
-    needs: [build-frontend, install-laravel-deps]
-    name: 🎉 Deploy
+    needs: build-frontend
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Get latest code
+      - name: Get latest code
         uses: actions/checkout@v4
 
-      - name: 📂 Sync files
+      - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: vh428.timeweb.ru
