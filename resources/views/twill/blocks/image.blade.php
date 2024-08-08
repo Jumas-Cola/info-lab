@@ -6,13 +6,3 @@
     name="highlight"
     label="Highlight"
 />
-
-<x-twill::input
-    name="alt"
-    label="Alt"
-/>
-
-<x-twill::input
-    name="caption"
-    label="Caption"
-/>
