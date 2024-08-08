@@ -5,7 +5,17 @@ name: 🚀 Deploy website on push
 permissions:
   contents: write
 jobs:
-  build:
+  install-laravel-dependencies:
+    name: Install Laravel dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        uses: php-actions/composer@v6
+        with:
+          dev: no
+          args: --profile --ignore-platform-reqs
+
+  build-frontend:
     name: Build
     runs-on: ubuntu-latest
     steps:
