@@ -21,7 +21,7 @@ class SearchController extends Controller
 
         $results = $this->pageRepository
             ->notHidden()
-            ->where('title', 'ilike', "%{$query}%")
+            ->where('title', 'like', "%{$query}%")
             ->limit(10)
             ->get()->map(function ($page) {
                 return [
