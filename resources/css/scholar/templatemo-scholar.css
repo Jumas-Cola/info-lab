@@ -1809,7 +1809,7 @@ body {
     }
 
     .main-banner {
-        padding-top: 100px;
+        padding: 10px 0 20px;
     }
 
     .main-banner .item {

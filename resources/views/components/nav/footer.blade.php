@@ -1,4 +1,4 @@
-<footer class="py-5">
+<footer class="pt-5">
     <div class="container">
         <div class="col-lg-12">
             {!! $siteSettings['footerText'] !!}
