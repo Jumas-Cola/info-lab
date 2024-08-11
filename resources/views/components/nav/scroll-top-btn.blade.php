@@ -1,6 +1,6 @@
 <button
     x-data="scrollTopBtn"
-    @click.window="window.scrollTo({top: 0, behavior: 'smooth'})"
+    @click="window.scrollTo({top: 0, behavior: 'smooth'})"
     @scroll.window="checkScrollPosition"
     type="button"
     class="btn btn-primary rounded-circle btn-lg"
