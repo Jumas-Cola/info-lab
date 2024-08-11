@@ -13,3 +13,13 @@
 :root, [data-bs-theme=light] {
   --bs-border-width: 0px;
 }
+
+#btnScrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-width: 1px;
+  border-color: #fff;
+  z-index: 999;
+  display: none;
+}

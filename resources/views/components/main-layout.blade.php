@@ -42,6 +42,8 @@ https://templatemo.com/tm-586-scholar
 
     {{ $slot }}
 
+    <x-nav.scroll-top-btn />
+
     <x-nav.footer />
 
     <!-- Scripts -->
