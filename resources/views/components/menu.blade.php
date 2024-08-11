@@ -39,7 +39,7 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a href="{{ route('pages') }}"
-                        class="text-white nav-link {{ Route::is('pages') ? 'active' : '' }}">Блог</a>
+                        class="text-white nav-link {{ Route::is('pages') ? 'active' : '' }}">Статьи</a>
                 </li>
                 @foreach ($links as $link)
                 <li class="nav-item">
