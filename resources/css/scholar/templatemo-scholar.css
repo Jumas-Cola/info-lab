@@ -996,21 +996,18 @@ h2.accordion-header button {
     font-size: 18px;
     font-weight: 500;
     background-image: none;
-    content: '+';
     width: 30px;
     height: 30px;
     display: inline-block;
     text-align: center;
     line-height: 30px;
     border-radius: 50%;
-    background-color: #0D6EFD;
     color: #fff;
 }
 
 .accordion-button:not(.collapsed)::after {
     background-image: none;
     line-height: 32px;
-    content: '-';
 }
 
 .accordion-body {
