@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function __invoke(): mixed
     {
-        return view('scholar');
+        return view('home');
     }
 }

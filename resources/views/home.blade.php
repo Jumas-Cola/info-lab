@@ -1,52 +1,5 @@
 <x-main-layout>
-    <div class="services section" id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item">
-                        <div class="icon">
-                            <img src="{{ Vite::asset('resources/images/service-01.png') }}" alt="online degrees">
-                        </div>
-                        <div class="main-content">
-                            <h4>Online Degrees</h4>
-                            <p>Whenever you need free templates in HTML CSS, you just remember TemplateMo website.</p>
-                            <div class="main-button">
-                                <a href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item">
-                        <div class="icon">
-                            <img src="{{ Vite::asset('resources/images/service-02.png') }}" alt="short courses">
-                        </div>
-                        <div class="main-content">
-                            <h4>Short Courses</h4>
-                            <p>You can browse free templates based on different tags such as digital marketing, etc.</p>
-                            <div class="main-button">
-                                <a href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item">
-                        <div class="icon">
-                            <img src="{{ Vite::asset('resources/images/service-03.png') }}" alt="web experts">
-                        </div>
-                        <div class="main-content">
-                            <h4>Web Experts</h4>
-                            <p>You can start learning HTML CSS by modifying free templates from our website too.</p>
-                            <div class="main-button">
-                                <a href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <x-home.services />
 
     <div class="section about-us">
         <div class="container">
@@ -90,13 +43,12 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false"
-                                    aria-controls="collapseThree">
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     Why SCHOLAR is the best?
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse"
-                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     There are more than one hundred responsive HTML templates to choose from
                                     <strong>Template</strong>Mo website. You can browse by different tags or categories.
@@ -106,8 +58,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFour">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false"
-                                    aria-controls="collapseFour">
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                     Do we get the best support?
                                 </button>
                             </h2>
@@ -124,7 +75,7 @@
                 </div>
                 <div class="col-lg-5 align-self-center">
                     <div class="section-heading">
-                        <h6>About Us</h6>
+                        <h6>О сайте</h6>
                         <h2>What make us the best academy online?</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid risus commodo.</p>
