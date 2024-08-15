@@ -36,18 +36,20 @@
                         </li>
                         <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.normal-algo') }}">Нормальные
                                 алгоритмы</a></li>
+                        <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.game-of-life') }}">Игра
+                                "Жизнь"</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="{{ route('pages') }}"
                         class="text-white nav-link {{ Route::is('pages') ? 'active' : '' }}">Статьи</a>
                 </li>
                 @foreach ($links as $link)
-                <li class="nav-item">
-                    <a class="text-white nav-link"
-                        href="{{ route('frontend.page', [$link->getRelated('page')->first()->slug]) }}">
-                        {{ $link->title }}
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="text-white nav-link"
+                            href="{{ route('frontend.page', [$link->getRelated('page')->first()->slug]) }}">
+                            {{ $link->title }}
+                        </a>
+                    </li>
                 @endforeach
             </ul>
         </div>
