@@ -753,9 +753,8 @@ Banner Style
 */
 
 .main-banner {
-    padding: 70px 0px 120px 0px;
+    padding: 70px 0px 100px 0px;
     background-color: #0d6efd;
-    border-radius: 0 0 200px 0;
 }
 
 .main-banner .item-1 {

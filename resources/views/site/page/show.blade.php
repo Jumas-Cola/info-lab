@@ -7,6 +7,10 @@
         {{ $page->description }}
     </x-slot>
 
+    @if (!Str::startsWith($page->image('cover'), 'data'))
+        <div class="cover" style="background-image: url({{ $page->image('cover') }})"></div>
+    @endif
+
     <div class="container mt-4">
         <div class="w-100 me-5">
             <h1 class="mt-3">{{ $page->title }}</h1>
@@ -21,7 +25,8 @@
                 <div class="col">
                     <a href="{{ route('frontend.page', ['slug' => $child->getNestedSlug()]) }}" type="button">
                         <div class="card shadow-sm">
-                            <img class="card-img-top" width="100%" height="225" src="{{ $child->image('cover') }}"/>
+                            <img class="card-img-top" width="100%" height="225"
+                                src="{{ $child->image('cover') }}" />
                             <div class="card-body">
                                 <p class="fs-4">{{ $child->title }}</p>
                                 <p class="card-text">{{ Str::limit(strip_tags($child->renderBlocks())) }}</p>

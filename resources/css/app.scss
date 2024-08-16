@@ -10,7 +10,8 @@
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-:root, [data-bs-theme=light] {
+:root,
+[data-bs-theme='light'] {
   --bs-border-width: 0px;
 }
 
@@ -22,4 +23,15 @@
   border-color: #fff;
   z-index: 999;
   display: none;
+}
+
+.cover {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  background: #fff no-repeat 50% 50% / cover;
+
+  @media (max-width: 992px) {
+    height: 180px;
+  }
 }
