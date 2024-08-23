@@ -29,12 +29,12 @@
                     <div class="form-check">
                         <template x-if="!question.multiple_choice">
                             <input class="form-check-input border border-1 border-primary" type="radio"
-                                :value="answer.id" name="answer" :id="`check-${answer.id}`"
+                                :value="answer.id" :name="`answer-${testId}-${question.id}`" :id="`check-${answer.id}`"
                                 @input="setAnswer(question.id, answer.id, 'radio')">
                         </template>
                         <template x-if="question.multiple_choice">
                             <input class="form-check-input border border-1 border-primary" type="checkbox"
-                                :value="answer.id" name="answer" id="`check-${answer.id}`"
+                                :value="answer.id" :name="`answer-${testId}-${question.id}`" id="`check-${answer.id}`"
                                 @input="setAnswer(question.id, answer.id, 'checkbox')">
                         </template>
                         <label class="form-check-label" for="`check-${answer.id}`" x-text="answer.answer">
