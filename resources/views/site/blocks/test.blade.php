@@ -14,11 +14,17 @@
                         </template>
                     </div>
 
-                    <div class="bg-danger text-white rounded-pill p-2" x-show="results[question.id] === false">
-                        <i class="bi bi-x-octagon"></i> Неправильно
-                    </div>
-                    <div class="bg-success text-white rounded-pill p-2" x-show="results[question.id] === true">
-                        <i class="bi bi-check-circle"></i> Правильно
+                    <div>
+                        <div x-show="results[question.id] === false">
+                            <div class="d-flex bg-danger text-white rounded-pill p-2">
+                                <i class="bi bi-x-octagon me-1"></i> Неправильно
+                            </div>
+                        </div>
+                        <div x-show="results[question.id] === true">
+                            <div class="d-flex bg-success text-white rounded-pill p-2">
+                                <i class="bi bi-check-circle me-1"></i> Правильно
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <template x-if="errors[question.id] !== undefined">
@@ -29,13 +35,13 @@
                     <div class="form-check">
                         <template x-if="!question.multiple_choice">
                             <input class="form-check-input border border-1 border-primary" type="radio"
-                                :value="answer.id" :name="`answer-${testId}-${question.id}`" :id="`check-${answer.id}`"
-                                @input="setAnswer(question.id, answer.id, 'radio')">
+                                :value="answer.id" :name="`answer-${testId}-${question.id}`"
+                                :id="`check-${answer.id}`" @input="setAnswer(question.id, answer.id, 'radio')">
                         </template>
                         <template x-if="question.multiple_choice">
                             <input class="form-check-input border border-1 border-primary" type="checkbox"
-                                :value="answer.id" :name="`answer-${testId}-${question.id}`" id="`check-${answer.id}`"
-                                @input="setAnswer(question.id, answer.id, 'checkbox')">
+                                :value="answer.id" :name="`answer-${testId}-${question.id}`"
+                                id="`check-${answer.id}`" @input="setAnswer(question.id, answer.id, 'checkbox')">
                         </template>
                         <label class="form-check-label" for="`check-${answer.id}`" x-text="answer.answer">
                         </label>
