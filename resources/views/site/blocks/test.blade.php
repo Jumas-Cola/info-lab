@@ -27,12 +27,12 @@
                 </template>
                 <template x-for="(answer, answerIndex) in question.answers" :key="answer.id">
                     <div class="form-check">
-                        <template x-if="question.multiple_choice">
+                        <template x-if="!question.multiple_choice">
                             <input class="form-check-input border border-1 border-primary" type="radio"
                                 :value="answer.id" name="answer" :id="`check-${answer.id}`"
                                 @input="setAnswer(question.id, answer.id, 'radio')">
                         </template>
-                        <template x-if="!question.multiple_choice">
+                        <template x-if="question.multiple_choice">
                             <input class="form-check-input border border-1 border-primary" type="checkbox"
                                 :value="answer.id" name="answer" id="`check-${answer.id}`"
                                 @input="setAnswer(question.id, answer.id, 'checkbox')">
