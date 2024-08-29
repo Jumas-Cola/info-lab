@@ -12,7 +12,7 @@
                         parent: document.querySelector('#editor_{{$block->id}}'),
                     });
 
-                    this.input.value = "{{$block->input('default_input')}}"
+                    this.input.value = `{{$block->input('default_input')}}`
 
                     this.editor.dispatch({
                         changes: {
@@ -30,8 +30,8 @@
                 tests: [
                   @foreach($block->children as $case)
                       {
-                          input: "{{$case->content['input']}}",
-                          output: "{{$case->content['output']}}"
+                          input: `{{$case->content['input']}}`,
+                          output: `{{$case->content['output']}}`
                       },
                   @endforeach
                 ],
