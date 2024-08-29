@@ -12,13 +12,13 @@
                         parent: document.querySelector('#editor_{{$block->id}}'),
                     });
 
-                    this.input.value = "{{$block->content['default_input']}}"
+                    this.input.value = "{{$block->input('default_input')}}"
 
                     this.editor.dispatch({
                         changes: {
                             from: 0,
                             to: this.editor.state.doc.length,
-                            insert: `{!!$block->content['default_code']!!}`,
+                            insert: `{!!$block->input('default_code')!!}`,
                         }
                     })
                 },

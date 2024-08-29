@@ -13,10 +13,12 @@
 
         <div class="row mt-3">
             <div class="col">
-                <textarea class="form-control" id="input_{{ $block->id }}" rows="5"></textarea>
+                <label class="fs-5" for="input_{{ $block->id }}">Ввод:</label>
+                <textarea class="form-control border border-1 border-primary" id="input_{{ $block->id }}" rows="5"></textarea>
             </div>
             <div class="col">
-                <textarea class="form-control" id="output_{{ $block->id }}" rows="5"></textarea>
+                <label class="fs-5" for="output_{{ $block->id }}">Вывод:</label>
+                <textarea class="form-control border border-1 border-primary" id="output_{{ $block->id }}" rows="5"></textarea>
             </div>
         </div>
 
