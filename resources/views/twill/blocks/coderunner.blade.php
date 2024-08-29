@@ -3,6 +3,7 @@
 @twillBlockGroup('app')
 
 <x-twill::input
+    type="textarea"
     name="default_input"
     label="Default Input"
 />
