@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BaseConvertController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\GameOfLifeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NormalAlgoController;
@@ -33,3 +34,7 @@ Route::get('pages/laboratornye', [PageDisplayController::class, 'show'])->name('
 Route::post('test-check', [TestCheckController::class, 'handleTestResults'])->name('test-check');
 
 Route::get('search', [SearchController::class, 'search'])->name('search');
+
+Route::middleware('recaptcha')->group(function () {
+    Route::post('contact-us', [ContactUsController::class, 'contactUs'])->name('contact-us');
+});
