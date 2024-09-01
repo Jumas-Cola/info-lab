@@ -2,12 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use A17\Twill\Facades\TwillAppSettings;
+use App\Repositories\PageRepository;
 
 class HomeController extends Controller
 {
+    public function __construct(protected PageRepository $pageRepository)
+    {
+        parent::__construct();
+    }
+
     public function __invoke(): mixed
     {
-        return view('home');
+        $labPage = $this->pageRepository->forSlug('laboratornye');
+
+        $latestLabs = $this->pageRepository->notHidden()
+            ->where('parent_id', $labPage->id)
+            ->published()
+            ->orderBy('position', 'desc')
+            ->limit(6)
+            ->get();
+
+        return view('home', compact('latestLabs'));
     }
 }
