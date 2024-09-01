@@ -13,6 +13,10 @@
 
     <div class="container mt-4">
         <div class="w-100 me-5">
+            @foreach ($page->tags as $tag)
+                <span class="badge text-bg-primary">{{ $tag->name }}</span>
+            @endforeach
+
             <h1 class="mt-3">{{ $page->title }}</h1>
 
             {!! $page->renderBlocks() !!}

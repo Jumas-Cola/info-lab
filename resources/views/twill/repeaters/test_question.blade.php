@@ -1,4 +1,4 @@
-@twillRepeaterTitle('Test Question')
+@twillRepeaterTitle('Вопрос теста')
 
 <x-twill::input
     name="question"

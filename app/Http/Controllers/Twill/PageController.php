@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Twill;
 use A17\Twill\Models\Contracts\TwillModelContract;
 use A17\Twill\Services\Forms\Fields\BlockEditor;
 use A17\Twill\Services\Forms\Fields\Medias;
+use A17\Twill\Services\Forms\Fields\Tags;
 use A17\Twill\Services\Listings\Columns\Text;
 use A17\Twill\Services\Listings\TableColumns;
 use A17\Twill\Services\Forms\Fields\Input;
@@ -47,15 +48,19 @@ class PageController extends BaseModuleController
         $form = parent::getForm($model);
 
         $form->add(
-            Checkbox::make()->name('hidden')->label('Hide from blog')
+            Checkbox::make()->name('hidden')->label('Скрыть в блоге')
         );
 
         $form->add(
-            Input::make()->name('description')->label('Description')
+            Input::make()->name('description')->label('Описание')
         );
 
         $form->add(
-            Medias::make()->name('cover')->label('Cover image')
+            Medias::make()->name('cover')->label('Обложка')
+        );
+
+        $form->add(
+            Tags::make()->name('tags')->label('Теги')
         );
 
         $form->add(

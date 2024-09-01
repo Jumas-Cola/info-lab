@@ -45,7 +45,7 @@ class MenuLinkController extends BaseModuleController
         $table = parent::additionalIndexTableColumns();
 
         $table->add(
-            Text::make()->field('description')->title('Description')
+            Text::make()->field('description')->title('Описание')
         );
 
         return $table;

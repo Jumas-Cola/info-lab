@@ -1,13 +1,13 @@
-@twillRepeaterTitle('Test Case')
+@twillRepeaterTitle('Тестовый кейс')
 
 <x-twill::input
     type="textarea"
     name="input"
-    label="Input"
+    label="Ввод"
 />
 
 <x-twill::input
     type="textarea"
     name="output"
-    label="Output"
+    label="Вывод"
 />

@@ -30,8 +30,8 @@
                 tests: [
                   @foreach($block->children as $case)
                       {
-                          input: `{{$case->content['input']}}`,
-                          output: `{{$case->content['output']}}`
+                          input: `{{$case->content['input'] ?? ''}}`,
+                          output: `{{$case->content['output'] ?? ''}}`
                       },
                   @endforeach
                 ],
