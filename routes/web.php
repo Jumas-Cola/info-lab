@@ -30,6 +30,7 @@ Route::prefix('calc')->name('calc.')->group(function () {
 Route::get('pages/{slug}', [PageDisplayController::class, 'show'])->name('frontend.page')->where('slug', '.*');
 Route::get('pages', [PageDisplayController::class, 'index'])->name('pages');
 Route::get('pages/laboratornye', [PageDisplayController::class, 'show'])->name('labs');
+Route::get('pages/o-sajte', [PageDisplayController::class, 'show'])->name('about');
 
 Route::post('test-check', [TestCheckController::class, 'handleTestResults'])->name('test-check');
 

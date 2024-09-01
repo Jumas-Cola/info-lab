@@ -16,7 +16,11 @@ class PageDisplayController extends Controller
 
     public function show(string $slug, PageRepository $pageRepository): View
     {
-        $page = $pageRepository->forNestedSlug($slug);
+        try {
+            $page = $pageRepository->forNestedSlug($slug);
+        } catch (\Throwable $th) {
+            abort(404);
+        }
 
         if (! $page) {
             abort(404);

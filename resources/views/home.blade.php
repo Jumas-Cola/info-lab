@@ -76,11 +76,10 @@
                 <div class="col-lg-5 align-self-center">
                     <div class="section-heading">
                         <h6>О сайте</h6>
-                        <h2>What make us the best academy online?</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid risus commodo.</p>
+                        <h2>Хотите узнать больше о нас?</h2>
+                        <p>Чтобы узнать больше, посетите страницу "О нас".</p>
                         <div class="main-button">
-                            <a href="#">Discover More</a>
+                            <a href="{{route('about')}}">Подробнее</a>
                         </div>
                     </div>
                 </div>
