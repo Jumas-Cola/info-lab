@@ -5,10 +5,9 @@
         <div class="row">
             <div class="col-lg-6  align-self-center">
                 <div class="section-heading">
-                    <h6>Contact Us</h6>
-                    <h2>Feel free to contact us anytime</h2>
-                    <p>Thank you for choosing our templates. We provide you best CSS templates at absolutely 100%
-                        free of charge. You may support us by sharing our website to your friends.</p>
+                    <h6>Связаться с нами</h6>
+                    <h2>Не стесняйтесь связаться с нами в любое время</h2>
+                    <p>Если у вас есть вопросы или предложения, пожалуйста, напишите нам.</p>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -52,26 +51,36 @@
             name: '',
             email: '',
             message: '',
-            formSubmit() {
+            async formSubmit() {
                 const name = this.name;
                 const email = this.email;
                 const message = this.message;
 
-                grecaptcha.ready(function() {
+
+                const token = grecaptcha.ready(function() {
                     grecaptcha.execute('{{ config('recaptcha.site_key') }}', {
                         action: 'submit'
                     }).then(function(token) {
-                        axios.post("{{ route('contact-us') }}", {
-                            "g-recaptcha-response": token,
-                            name: name,
-                            email: email,
-                            message: message
-                        }).then(function(response) {
-                            console.log(response);
-                        });
+                        return token;
                     });
                 });
-                console.log('form submit');
+
+                const response = await axios.post("{{ route('contact-us') }}", {
+                    "g-recaptcha-response": token,
+                    name: name,
+                    email: email,
+                    message: message
+                }).then(function(response) {
+                    return response;
+                });
+
+                if (response.data.success === true) {
+                    this.name = '';
+                    this.email = '';
+                    this.message = '';
+                    Toastify.success('Отправлено',
+                        'Спасибо за Ваше сообщение');
+                }
             }
         }))
     })

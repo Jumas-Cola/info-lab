@@ -12,3 +12,8 @@ import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 
 Alpine.start();
+
+import Toastify from 'toastify';
+
+Toastify.setOption('position', 'top-right');
+window.Toastify = Toastify;
