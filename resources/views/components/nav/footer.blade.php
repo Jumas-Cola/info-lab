@@ -1,7 +1,7 @@
 <footer class="pt-5">
     <div class="container">
         <div class="col-lg-12">
-            {!! $siteSettings['footerText'] !!}
+            {!! $siteSettings->content['footerText'] !!}
         </div>
     </div>
 

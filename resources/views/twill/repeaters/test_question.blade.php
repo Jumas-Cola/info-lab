@@ -1,4 +1,5 @@
 @twillRepeaterTitle('Вопрос теста')
+@twillRepeaterTrigger('Добвить вопрос теста')
 
 <x-twill::input
     name="question"

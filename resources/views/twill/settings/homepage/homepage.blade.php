@@ -7,6 +7,8 @@
     label="Лого"
 />
 
+<x-twill::repeater type="homepage_question"/>
+
 <x-twill::wysiwyg
     name="footerText"
     label="Текст в подвале сайта"

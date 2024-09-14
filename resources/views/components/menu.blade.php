@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- ***** Logo Start ***** -->
         <a class="navbar-brand" href="{{ route('home') }}">
-            <span class="text-white fs-1 fw-bold">{{ $siteSettings['logo'] }}</span>
+            <span class="text-white fs-1 fw-bold">{{ $siteSettings->content['logo'] }}</span>
         </a>
         <!-- ***** Logo End ***** -->
         <!-- ***** Serach Start ***** -->

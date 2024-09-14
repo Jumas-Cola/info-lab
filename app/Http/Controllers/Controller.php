@@ -9,6 +9,6 @@ abstract class Controller
 {
     public function __construct()
     {
-        View::share('siteSettings', TwillAppSettings::getGroupDataForSectionAndName('homepage', 'homepage')->content);
+        View::share('siteSettings', TwillAppSettings::getGroupDataForSectionAndName('homepage', 'homepage'));
     }
 }
