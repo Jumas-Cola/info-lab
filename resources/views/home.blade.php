@@ -9,7 +9,7 @@
                         @foreach ($siteSettings->children as $question)
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="heading{{ $loop->index }}">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }}" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapse{{ $loop->index }}"
                                         aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
                                         aria-controls="collapse{{ $loop->index }}">
