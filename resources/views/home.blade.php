@@ -5,17 +5,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-1">
-                    <div class="accordion" id="accordionExample">
+                    <div class="accordion" id="accordionQuestions">
                         @foreach ($siteSettings->children as $question)
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
+                                <h2 class="accordion-header" id="heading{{ $loop->index }}">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        data-bs-target="#collapse{{ $loop->index }}"
+                                        aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
+                                        aria-controls="collapse{{ $loop->index }}">
                                         {{ $question->content['question'] }}
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div id="collapse{{ $loop->index }}"
+                                    class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
+                                    aria-labelledby="heading{{ $loop->index }}" data-bs-parent="#accordionQuestions">
                                     <div class="accordion-body">
                                         {!! $question->content['answer'] !!}
                                     </div>
