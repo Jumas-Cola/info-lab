@@ -8,7 +8,7 @@
     "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
   },
   "resources/css/app.scss": {
-    "file": "assets/app--fsixl9R.css",
+    "file": "assets/app-CTxoIFtz.css",
     "src": "resources/css/app.scss",
     "isEntry": true
   },
@@ -43,6 +43,38 @@
   "resources/fonts/fa-v4compatibility.woff2": {
     "file": "assets/fa-v4compatibility-CgPtUqW2.woff2",
     "src": "resources/fonts/fa-v4compatibility.woff2"
+  },
+  "resources/fonts/montserrat-cyrillic-ext-italic-100-900.woff2": {
+    "file": "assets/montserrat-cyrillic-ext-italic-100-900-CjbUFnzg.woff2",
+    "src": "resources/fonts/montserrat-cyrillic-ext-italic-100-900.woff2"
+  },
+  "resources/fonts/montserrat-cyrillic-ext-normal-100-900.woff2": {
+    "file": "assets/montserrat-cyrillic-ext-normal-100-900-rV1oiNxr.woff2",
+    "src": "resources/fonts/montserrat-cyrillic-ext-normal-100-900.woff2"
+  },
+  "resources/fonts/montserrat-cyrillic-italic-100-900.woff2": {
+    "file": "assets/montserrat-cyrillic-italic-100-900-pe6s7PaP.woff2",
+    "src": "resources/fonts/montserrat-cyrillic-italic-100-900.woff2"
+  },
+  "resources/fonts/montserrat-cyrillic-normal-100-900.woff2": {
+    "file": "assets/montserrat-cyrillic-normal-100-900-CHYi_LmU.woff2",
+    "src": "resources/fonts/montserrat-cyrillic-normal-100-900.woff2"
+  },
+  "resources/fonts/montserrat-latin-ext-italic-100-900.woff2": {
+    "file": "assets/montserrat-latin-ext-italic-100-900-C9tplYBx.woff2",
+    "src": "resources/fonts/montserrat-latin-ext-italic-100-900.woff2"
+  },
+  "resources/fonts/montserrat-latin-ext-normal-100-900.woff2": {
+    "file": "assets/montserrat-latin-ext-normal-100-900-BIVePy9u.woff2",
+    "src": "resources/fonts/montserrat-latin-ext-normal-100-900.woff2"
+  },
+  "resources/fonts/montserrat-latin-italic-100-900.woff2": {
+    "file": "assets/montserrat-latin-italic-100-900-SBL4XjR7.woff2",
+    "src": "resources/fonts/montserrat-latin-italic-100-900.woff2"
+  },
+  "resources/fonts/montserrat-latin-normal-100-900.woff2": {
+    "file": "assets/montserrat-latin-normal-100-900-BDA6280a.woff2",
+    "src": "resources/fonts/montserrat-latin-normal-100-900.woff2"
   },
   "resources/images/banner-bg.jpg": {
     "file": "assets/banner-bg-qWJavGRi.jpg",
@@ -137,16 +169,24 @@
     "src": "resources/images/testimonial-author.jpg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-B17WnbEK.js",
+    "file": "assets/app-kReRkYL9.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app--fsixl9R.css"
+      "assets/app-CTxoIFtz.css"
     ],
     "assets": [
       "assets/bootstrap-icons-BtvjY1KL.woff2",
       "assets/bootstrap-icons-BOrJxbIo.woff",
+      "assets/montserrat-cyrillic-ext-italic-100-900-CjbUFnzg.woff2",
+      "assets/montserrat-cyrillic-italic-100-900-pe6s7PaP.woff2",
+      "assets/montserrat-latin-italic-100-900-SBL4XjR7.woff2",
+      "assets/montserrat-cyrillic-ext-normal-100-900-rV1oiNxr.woff2",
+      "assets/montserrat-cyrillic-normal-100-900-CHYi_LmU.woff2",
+      "assets/montserrat-latin-ext-normal-100-900-BIVePy9u.woff2",
+      "assets/montserrat-latin-normal-100-900-BDA6280a.woff2",
+      "assets/montserrat-latin-ext-italic-100-900-C9tplYBx.woff2",
       "assets/banner-item-01-CJYMeB1P.jpg",
       "assets/banner-item-02-umqOcrZL.jpg",
       "assets/banner-item-03-BfjpGBbB.jpg",
