@@ -5,7 +5,7 @@
                 <h5 class="card-title text-center">Игра "Жизнь"</h5>
 
                 <div class="row justify-content-center mt-2">
-                    <table>
+                    <table class="col-md-8">
                         <template x-for="(row, rowIndex) in field">
                             <tr>
                                 <template x-for="(cell, colIndex) in row">
