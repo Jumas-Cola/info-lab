@@ -4,7 +4,752 @@
             <div x-data="gameOfLife" class="card-body">
                 <h5 class="card-title text-center">Игра "Жизнь"</h5>
 
-                <div class="row justify-content-center mt-2">
+                <div>
+                    <p>
+                        Игра "Жизнь" (Conway's Game of Life) — это клеточный автомат, разработанный математиком Джоном
+                        Конвеем в 1970 году. Игра "Жизнь" демонстрирует, как из простых правил могут возникать сложные и
+                        непредсказуемые структуры. Она представляет собой двумерную сетку, где каждая клетка может быть
+                        либо "живой", либо "мёртвой". Эволюция клеток происходит на основе определённых правил, которые
+                        определяют, как клетка будет изменяться в зависимости от её соседей.
+                    </p>
+
+                    <p>
+                        Принципы работы игры:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <span class="fw-bold">Сетка</span> состоит из клеток, каждая из которых находится в одном из
+                            двух состояний: "живая"
+                            (заполненная) или "мёртвая" (пустая).
+                        </li>
+                        <li>
+                            <span class="fw-bold">Поколения</span>: игра протекает в виде последовательных шагов
+                            (поколений). На каждом шаге
+                            состояние всех клеток обновляется одновременно.
+                        </li>
+                        <li>
+                            <span class="fw-bold">Соседи клетки</span> — это 8 клеток, окружающих её со всех сторон:
+                            сверху, снизу, слева, справа и
+                            по диагоналям.
+                        </li>
+                    </ul>
+
+                    Правила:
+
+                    <ul>
+                        <li>
+                            <span class="fw-bold">Рождение</span>: если у мёртвой клетки есть ровно три живых соседа, то
+                            она "оживает" в следующем поколении.
+                        </li>
+                        <li>
+                            <span class="fw-bold">Выживание</span>: если у живой клетки два или три живых соседа, то она
+                            остаётся живой.
+                        </li>
+                        <li>
+                            <span class="fw-bold">Смерть от одиночества</span>: если у живой клетки меньше двух живых
+                            соседей, она умирает от недостатка
+                            взаимодействий.
+                        </li>
+                        <li>
+                            <span class="fw-bold">Смерть от перенаселённости</span>: если у живой клетки больше трёх
+                            живых соседей, она умирает из-за
+                            перенаселённости.
+                        </li>
+                    </ul>
+
+                    <p class="fs-4">Примеры фигур:</p>
+
+                    <p class="fs-5 mt-3">Блок (Block)</p>
+
+                    <p>
+                        Это простая, стабильная структура из четырёх живых клеток, которая никогда не изменяется. Блок
+                        не
+                        имеет соседей, чтобы умереть или разделиться, поэтому он остаётся неизменным.
+                    </p>
+
+                    <table style="width: 50px">
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p class="fs-5 mt-3">Кораблик (Glider)</p>
+                    <p>
+                        Это подвижная структура, которая перемещается по сетке по диагонали. Кораблик — одна из самых
+                        известных фигур в "Жизни". Каждые несколько шагов его форма меняется, но он продолжает двигаться
+                        в одном направлении.
+                    </p>
+
+                    <table style="width: 75px">
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p class="fs-5 mt-3">Пульсар (Pulsar)</p>
+                    <p>
+                        Это осциллирующая структура, которая колеблется в периоде 3 (меняет свою форму каждые три
+                        поколения). Пульсар — один из самых известных осцилляторов, состоящий из большого количества
+                        клеток.
+                    </p>
+
+                    <table style="width: 275px">
+                        <tr>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p class="fs-5 mt-3">Маяк (Beacon)</p>
+                    <p>
+                        Это ещё один осциллятор с периодом 2, состоящий из двух "блоков", которые колеблются, увеличивая
+                        и уменьшая своё пространство в зависимости от поколения.
+                    </p>
+
+                    <table style="width: 100px">
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                            <td>
+                                <div class="content bg-primary"></div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p class="mt-3">
+                        Игра "Жизнь" интересна своей простотой и одновременно возможностью моделировать сложные
+                        динамические
+                        системы. Несмотря на то что правила крайне просты, на практике они приводят к возникновению
+                        сложных
+                        и даже хаотических узоров. Игра Конвея наглядно демонстрирует, как из локальных взаимодействий
+                        могут
+                        появляться глобальные структуры и поведение.
+                    </p>
+                </div>
+
+                <div class="row justify-content-center mt-5">
                     <table class="col-md-8">
                         <template x-for="(row, rowIndex) in field">
                             <tr>
@@ -33,15 +778,15 @@
                             <div class="w-75">
                                 <label for="fieldSize" class="form-label">Размер поля: <span x-text="fieldSize"
                                         class="fw-bold"></span></label>
-                                <input type="range" class="form-range" id="fieldSize" value="10" min="5"
-                                    max="50" @change="resizeField">
+                                <input type="range" class="form-range" id="fieldSize" value="10"
+                                    min="5" max="50" @change="resizeField">
                             </div>
                         </div>
                         <div class="w-100 d-flex justify-content-center mt-2">
                             <div class="w-75">
                                 <label for="stepTime" class="form-label">Скорость:</label>
-                                <input type="range" class="form-range" id="stepTime" value="900" min="10"
-                                    max="1000" @change="changeStepTime">
+                                <input type="range" class="form-range" id="stepTime" value="900"
+                                    min="10" max="1000" @change="changeStepTime">
                             </div>
                         </div>
                     </div>
@@ -156,7 +901,6 @@
 
         td .content {
             aspect-ratio: 1 / 1;
-            background: gold;
         }
     </style>
 </x-main-layout>
