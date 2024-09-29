@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-1">
                 <div class="accordion" id="accordionQuestions">
-                    @foreach ($siteSettings->children as $question)
+                    @foreach ($siteSettings->children()->where('child_key', 'homepage_question')->get() as $question)
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="heading{{ $loop->index }}">
                                 <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }}" type="button"

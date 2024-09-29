@@ -9,6 +9,8 @@
 
 <x-twill::repeater type="homepage_question"/>
 
+<x-twill::repeater type="fun_facts"/>
+
 <x-twill::wysiwyg
     name="footerText"
     label="Текст в подвале сайта"
