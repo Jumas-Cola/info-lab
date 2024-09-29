@@ -24,11 +24,11 @@
                         <div class="col-3">
                             <div class="mb-3">
                                 <label for="inputNum" class="form-label">Введите число</label>
-                                <input type="number" class="form-control" id="inputNum" type="number" x-model="num">
+                                <input type="number" class="form-control border-1" id="inputNum" type="number" x-model="num">
                             </div>
                             <div class="mb-3">
                                 <label for="inputBase" class="form-label">Введите начальное основание</label>
-                                <input type="number" class="form-control" id="inputBase" type="number" x-model="base">
+                                <input type="number" class="form-control border-1" id="inputBase" type="number" x-model="base">
                             </div>
                             <button class="btn btn-primary btn-sm mt-2" type="button"
                                 @click="changeBase">Перевести</button>
@@ -55,11 +55,11 @@
                         <div class="col-3">
                             <div class="mb-3">
                                 <label for="inputNum" class="form-label">Введите число</label>
-                                <input type="number" class="form-control" id="inputNum" type="number" x-model="num">
+                                <input type="number" class="form-control border-1" id="inputNum" type="number" x-model="num">
                             </div>
                             <div class="mb-3">
                                 <label for="inputBase" class="form-label">Введите основание</label>
-                                <input type="number" class="form-control" id="inputBase" type="number" x-model="base">
+                                <input type="number" class="form-control border-1" id="inputBase" type="number" x-model="base">
                             </div>
                             <button class="btn btn-primary btn-sm mt-2" type="button"
                                 @click="changeBase">Перевести</button>
