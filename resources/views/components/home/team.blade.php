@@ -1,62 +1,30 @@
 <div class="team section" id="team">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="team-member">
-                    <div class="main-content">
-                        <img src="{{ Vite::asset('resources/images/member-01.jpg') }}" alt="">
-                        <span class="category">UX Teacher</span>
-                        <h4>Sophia Rose</h4>
-                        <ul class="social-icons">
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
+        <div class="d-flex justify-content-center">
+            @foreach ($siteSettings->children()->where('child_key', 'site_faces')->get() as $face)
+                <div class="ms-3 col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <div class="main-content">
+                            @if (!Str::startswith($face->image('highlight', 'mobile'), 'data'))
+                                <img src="{{ $face->image('highlight', 'mobile') }}" alt="{{ $face->content['name'] }}">
+                            @else
+                                <img src="{{ Vite::asset('resources/images/placeholder.jpg') }}"
+                                    alt="{{ $face->content['name'] }}">
+                            @endif
+                            <span class="category">{{ $face->content['job_title'] }}</span>
+                            <h4>{{ $face->content['name'] }}</h4>
+                            <div class="d-flex justify-content-center">
+                                <div class="social-icons row w-75">
+                                    @if (array_key_exists('github', $face->content) and $face->content['github'])
+                                        <div class="col"><a href="{{ $face->content['github'] }}"><i
+                                                    class="fab fa-github"></i></a></div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team-member">
-                    <div class="main-content">
-                        <img src="{{ Vite::asset('resources/images/member-02.jpg') }}" alt="">
-                        <span class="category">Graphic Teacher</span>
-                        <h4>Cindy Walker</h4>
-                        <ul class="social-icons">
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team-member">
-                    <div class="main-content">
-                        <img src="{{ Vite::asset('resources/images/member-03.jpg') }}" alt="">
-                        <span class="category">Full Stack Master</span>
-                        <h4>David Hutson</h4>
-                        <ul class="social-icons">
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team-member">
-                    <div class="main-content">
-                        <img src="{{ Vite::asset('resources/images/member-04.jpg') }}" alt="">
-                        <span class="category">Digital Animator</span>
-                        <h4>Stella Blair</h4>
-                        <ul class="social-icons">
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

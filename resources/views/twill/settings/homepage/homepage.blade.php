@@ -11,6 +11,8 @@
 
 <x-twill::repeater type="fun_facts"/>
 
+<x-twill::repeater type="site_faces"/>
+
 <x-twill::wysiwyg
     name="footerText"
     label="Текст в подвале сайта"
