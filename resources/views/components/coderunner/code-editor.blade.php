@@ -85,9 +85,12 @@
                     finally:
                         sys.stdout = sys.__stdout__
 
-                    if stdout_buffer.getvalue().strip() != test["output"]:
+                    real = stdout_buffer.getvalue().strip()
+                    expected = test["output"].strip()
+
+                    if real != expected:
                         test_result.setAttribute("class", "mt-3 fs-5 text-danger")
-                        test_result.innerHTML = f"Тест {i} провален.<br> Ввод: '{test['input']}'<br> Ожидаемый вывод: '{test['output'].strip()}', имеется '{stdout_buffer.getvalue().strip()}'"
+                        test_result.innerHTML = f"Тест {i} провален.<br> Ввод: '{test['input']}'<br> Ожидаемый вывод: '{expected}', имеется '{real}'"
                         break
                     i += 1
                 else:
