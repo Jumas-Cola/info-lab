@@ -9,7 +9,7 @@
 
     <x-home.team />
 
-    <x-home.testimonials />
+    <!--<x-home.testimonials />-->
 
     <x-home.events />
 

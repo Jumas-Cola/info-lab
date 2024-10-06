@@ -13,6 +13,8 @@
 
 <x-twill::repeater type="site_faces"/>
 
+<x-twill::repeater type="roadmap_items"/>
+
 <x-twill::wysiwyg
     name="footerText"
     label="Текст в подвале сайта"
