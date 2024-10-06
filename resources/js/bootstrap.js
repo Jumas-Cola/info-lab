@@ -7,6 +7,10 @@ import TestCheckApi from './api/test-check';
 
 window.TestCheckApi = TestCheckApi;
 
+import Cookies from 'js-cookie';
+
+window.Cookies = Cookies;
+
 import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;

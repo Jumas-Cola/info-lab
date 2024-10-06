@@ -39,8 +39,12 @@
                                                 </li>
                                             @endif
                                         </ul>
-                                        <a href="/pages/{{ $item->getRelated('page')->first()->slug }}"><i
-                                                class="fa fa-angle-right"></i></a>
+                                        @if ($item->getRelated('page')->first()->slug ?? false)
+                                            <a href="/pages/{{ $item->getRelated('page')->first()->slug }}"><i
+                                                    class="fa fa-angle-right"></i></a>
+                                        @else
+                                            <a href="#"></a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

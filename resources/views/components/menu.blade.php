@@ -51,6 +51,7 @@
                         </a>
                     </li>
                 @endforeach
+                <x-nav.theme-switch />
             </ul>
         </div>
     </div>
