@@ -15,7 +15,9 @@
                 Alpine.data('useCookie', () => ({
                     useCookieShow: Cookies.get('useCookieShow') === 'false' ? false : true,
                     setUseCookieShow(show) {
-                        Cookies.set('useCookieShow', show);
+                        Cookies.set('useCookieShow', show, {
+                            expires: 400
+                        });
                         this.useCookieShow = show;
                     },
                 }));
