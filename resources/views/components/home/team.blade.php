@@ -16,8 +16,11 @@
                             <div class="d-flex justify-content-center">
                                 <div class="social-icons row w-75">
                                     @if (array_key_exists('github', $face->content) and $face->content['github'])
-                                        <div class="col"><a href="{{ $face->content['github'] }}"><i
-                                                    class="fab fa-github"></i></a></div>
+                                        <div class="col">
+                                            <a href="{{ $face->content['github'] }}" target="_blank">
+                                                <i class="fab fa-github"></i>
+                                            </a>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
