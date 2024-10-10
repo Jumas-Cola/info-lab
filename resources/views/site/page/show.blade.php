@@ -47,4 +47,18 @@
             @endforeach
         </div>
     </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const codes = document.querySelectorAll('code');
+            for (let code of codes) {
+                var codeNew = document.createElement('code');
+                var pre = document.createElement('pre');
+                pre.innerHTML = code.innerHTML;
+
+                codeNew.appendChild(pre);
+                code.parentNode.replaceChild(codeNew, code);
+            }
+        })
+    </script>
 </x-main-layout>
