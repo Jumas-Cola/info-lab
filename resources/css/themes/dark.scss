@@ -1,0 +1,19 @@
+$color-mode-type: data;
+
+@include color-mode(dark) {
+  .text-dark {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+  }
+
+  .services,
+  .about-us,
+  .event_box,
+  .fun-facts,
+  .team,
+  .testimonials,
+  .events,
+  .contact-us {
+    color: rgba(var(--bs-dark-rgb)) !important;
+  }
+}
