@@ -14,7 +14,8 @@
                 <div class="col">
                     <a href="{{ route('frontend.page', ['slug' => $page->getActiveSlug()['slug']]) }}" type="button">
                         <div class="card shadow-sm">
-                            <img class="card-img-top" width="100%" height="225" src="{{ $page->image('cover') }}"/>
+                            <img class="card-img-top" width="100%" height="225"
+                                src="{{ Str::startswith($page->image('cover'), 'data:') ? Vite::asset('resources/images/placeholder-02.jpg') : $page->image('cover') }}" />
                             <div class="card-body">
                                 <p class="fs-4">{{ $page->title }}</p>
                                 <p class="card-text">{{ Str::limit(strip_tags($page->renderBlocks())) }}</p>
