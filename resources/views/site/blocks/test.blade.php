@@ -6,7 +6,7 @@
                 <div class="w-75 d-inline-flex align-items-center justify-content-between mb-2">
                     <div>
                         <template x-if="question.question !== null">
-                            <div x-text="question.question"></div>
+                            <div x-html="question.question"></div>
                         </template>
                         <template x-if="question.question_image !== null">
                             <img :src="question.question_image" alt="" class="border border-1"
