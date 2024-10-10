@@ -16,4 +16,8 @@ $color-mode-type: data;
   .contact-us {
     color: rgba(var(--bs-dark-rgb)) !important;
   }
+
+  .events .section-heading h2 {
+    color: rgba(var(--bs-light-rgb)) !important;
+  }
 }
