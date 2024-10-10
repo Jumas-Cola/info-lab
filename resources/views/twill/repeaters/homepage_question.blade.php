@@ -1,5 +1,5 @@
 @twillRepeaterTitle('Вопрос - ответ')
-@twillRepeaterTrigger('Добвить вопрос и ответ')
+@twillRepeaterTrigger('Добавить вопрос и ответ')
 
 <x-twill::input name="question" label="Текст вопроса" />
 

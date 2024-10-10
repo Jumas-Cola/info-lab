@@ -1,5 +1,5 @@
 @twillRepeaterTitle('План развития проекта')
-@twillRepeaterTrigger('Добвить пункт плана развития')
+@twillRepeaterTrigger('Добавить пункт плана развития')
 
 <x-twill::medias name="highlight" label="Highlight" />
 

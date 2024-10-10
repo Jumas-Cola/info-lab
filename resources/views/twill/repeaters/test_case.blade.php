@@ -1,5 +1,5 @@
 @twillRepeaterTitle('Тестовый кейс')
-@twillRepeaterTrigger('Добвить тестовый кейс')
+@twillRepeaterTrigger('Добавить тестовый кейс')
 
 <x-twill::input
     type="textarea"

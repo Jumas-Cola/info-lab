@@ -1,4 +1,4 @@
 @twillRepeaterTitle('Интересные факты')
-@twillRepeaterTrigger('Добвить интересный факт')
+@twillRepeaterTrigger('Добавить интересный факт')
 
 <x-twill::input name="fact" label="Текст" />

@@ -1,5 +1,5 @@
 @twillRepeaterTitle('Команда сайта')
-@twillRepeaterTrigger('Добвить члена команды')
+@twillRepeaterTrigger('Добавить члена команды')
 
 <x-twill::input name="job_title" label="Должность" />
 

@@ -1,5 +1,5 @@
 @twillRepeaterTitle('Вопрос теста')
-@twillRepeaterTrigger('Добвить вопрос теста')
+@twillRepeaterTrigger('Добавить вопрос теста')
 
 <x-twill::wysiwyg name="question" label="Текст вопроса" placeholder="Текст вопроса" :toolbar-options="[
     ['header' => [2, 3, 4, 5, 6, false]],
