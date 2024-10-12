@@ -9,6 +9,8 @@
 
 
     <div class="container mt-5">
+        <x-page.tags-cloud :tagsCloud="$tagsCloud"/>
+
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-3">
             @foreach ($pages as $page)
                 <div class="col">

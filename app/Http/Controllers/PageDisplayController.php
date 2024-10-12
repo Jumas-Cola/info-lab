@@ -2,16 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use A17\Twill\Models\Tag;
 use App\Repositories\PageRepository;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class PageDisplayController extends Controller
 {
-    public function index(PageRepository $pageRepository)
+    public function index(Request $request, PageRepository $pageRepository)
     {
-        $pages = $pageRepository->notHidden()->whereNull('parent_id')->published()->orderBy('position')->paginate();
+        $selectedTags = $request->get('tags') ?? [];
 
-        return view('site.page.index', ['pages' => $pages]);
+        $pages = $pageRepository->notHidden()
+            ->whereNull('parent_id')
+            ->published()
+            ->with('tags');
+
+        if (! empty($selectedTags) and is_array($selectedTags)) {
+            $pages = $pages->whereHas('tags', function ($query) use ($selectedTags) {
+                $query->whereIn('name', $selectedTags);
+            });
+        }
+
+        $pages = $pages->orderBy('position')
+            ->paginate();
+
+        $tagsCloud = Tag::orderBy('count', 'desc')->limit(30)->get(['id', 'name']);
+
+        return view('site.page.index', [
+            'pages' => $pages,
+            'tagsCloud' => $tagsCloud,
+        ]);
     }
 
     public function show(string $slug, PageRepository $pageRepository): View
