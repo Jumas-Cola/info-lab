@@ -38,6 +38,8 @@
                                 алгоритмы</a></li>
                         <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.game-of-life') }}">Игра
                                 "Жизнь"</a></li>
+                        <li class="dropdown-item"><a class="text-dark"
+                                href="{{ route('calc.brython-interpreter') }}">Интерпретатор Python</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="{{ route('pages') }}"

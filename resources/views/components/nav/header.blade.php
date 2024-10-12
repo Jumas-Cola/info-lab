@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <x-menu/>
+                <x-nav.menu/>
             </div>
         </div>
     </div>

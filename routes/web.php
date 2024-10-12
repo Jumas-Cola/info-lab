@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BaseConvertController;
+use App\Http\Controllers\BrythonController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\GameOfLifeController;
 use App\Http\Controllers\HomeController;
@@ -25,6 +26,9 @@ Route::prefix('calc')->name('calc.')->group(function () {
 
     Route::get('game-of-life', [GameOfLifeController::class, 'index'])
         ->name('game-of-life');
+
+    Route::get('brython-interpreter', [BrythonController::class, 'index'])
+        ->name('brython-interpreter');
 });
 
 Route::get('pages/{slug}', [PageDisplayController::class, 'show'])->name('frontend.page')->where('slug', '.*');

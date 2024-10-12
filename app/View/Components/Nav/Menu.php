@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Nav;
 
 use App\Models\MenuLink;
 use Illuminate\Contracts\View\View;
@@ -13,6 +13,6 @@ class Menu extends Component
         /** @var MenuLink[] $links */
         $links = MenuLink::published()->get()->toTree();
 
-        return view('components.menu', ['links' => $links]);
+        return view('components.nav.menu', ['links' => $links]);
     }
 }
