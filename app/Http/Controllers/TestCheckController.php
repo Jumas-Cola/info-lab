@@ -15,6 +15,12 @@ class TestCheckController extends Controller
         $test = Block::find($testId);
         $questions = $test->children;
         $results = [];
+        $stats = new class
+        {
+            public int $correct = 0;
+
+            public int $incorrect = 0;
+        };
         foreach ($questions as $question) {
             $answers = $question->children;
             $userAnswers = $userQuestions[$question->id];
@@ -27,11 +33,13 @@ class TestCheckController extends Controller
 
             if (count($notMatches) > 0 or count($notMatchesReverse) > 0) {
                 $results[$question->id] = false;
+                $stats->incorrect++;
             } else {
                 $results[$question->id] = true;
+                $stats->correct++;
             }
         }
 
-        return response()->json(['results' => $results]);
+        return response()->json(['results' => $results, 'stats' => $stats]);
     }
 }

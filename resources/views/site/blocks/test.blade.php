@@ -56,6 +56,17 @@
     </ul>
     <div x-show="allAnswered" class="form-group">
         <button class="btn btn-lg btn-primary" @click="checkAnswers">Проверить</button>
+        <div class="fs-4" x-show="stats">
+            <span class="text-success">
+                <span x-text="stats.correct"></span>
+                правильно
+            </span>
+            /
+            <span class="text-danger">
+                <span x-text="stats.incorrect"></span>
+                неправильно
+            </span>
+        </div>
     </div>
 </div>
 
@@ -89,6 +100,7 @@
 
                 results.then(res => {
                     this.results = res.data.results;
+                    this.stats = res.data.stats;
                 });
             },
             checkAllAnswered() {
