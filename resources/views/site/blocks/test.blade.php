@@ -58,12 +58,12 @@
         <button class="btn btn-lg btn-primary" @click="checkAnswers">Проверить</button>
         <div class="fs-4" x-show="stats">
             <span class="text-success">
-                <span x-text="stats.correct"></span>
+                <span x-text="stats.correctPercentage"></span>%
                 правильно
             </span>
             /
             <span class="text-danger">
-                <span x-text="stats.incorrect"></span>
+                <span x-text="stats.incorrectPercentage"></span>%
                 неправильно
             </span>
         </div>

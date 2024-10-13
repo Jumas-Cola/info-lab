@@ -20,6 +20,10 @@ class TestCheckController extends Controller
             public int $correct = 0;
 
             public int $incorrect = 0;
+
+            public int $correctPercentage = 0;
+
+            public int $incorrectPercentage = 0;
         };
         foreach ($questions as $question) {
             $answers = $question->children;
@@ -38,6 +42,11 @@ class TestCheckController extends Controller
                 $results[$question->id] = true;
                 $stats->correct++;
             }
+        }
+
+        if ($questions->count() > 0) {
+            $stats->correctPercentage = round($stats->correct / $questions->count() * 100);
+            $stats->incorrectPercentage = round($stats->incorrect / $questions->count() * 100);
         }
 
         return response()->json(['results' => $results, 'stats' => $stats]);
