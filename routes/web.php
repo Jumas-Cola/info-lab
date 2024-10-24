@@ -10,11 +10,12 @@ use App\Http\Controllers\PageDisplayController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TestCheckController;
 use App\Http\Controllers\TuringMachineController;
+use App\Http\Controllers\AiTeacherController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 
-Route::prefix('calc')->name('calc.')->group(function () {
+Route::prefix('activity')->name('activity.')->group(function () {
     Route::get('base-convert', [BaseConvertController::class, 'index'])
         ->name('base-convert');
 
@@ -29,6 +30,11 @@ Route::prefix('calc')->name('calc.')->group(function () {
 
     Route::get('brython-interpreter', [BrythonController::class, 'index'])
         ->name('brython-interpreter');
+
+    Route::get('ai-teacher', [AiTeacherController::class, 'index'])
+        ->name('ai-teacher');
+    Route::post('ai-teacher/chat', [AiTeacherController::class, 'send'])
+        ->name('ai-teacher.chat');
 });
 
 Route::get('pages/{slug}', [PageDisplayController::class, 'show'])->name('frontend.page')->where('slug', '.*');

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b5785e7dc2ba83d6d3196f263a631a0",
+    "content-hash": "8a67344395871d0f2323d11453e4acdc",
     "packages": [
         {
             "name": "area17/twill",
@@ -8200,6 +8200,54 @@
             "time": "2024-06-28T08:00:31+00:00"
         },
         {
+            "name": "teariot/php-yandex-gpt",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TeaRiot/php-yandex-gpt.git",
+                "reference": "b517f0db19f3075633c392617452b67690c35d89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TeaRiot/php-yandex-gpt/zipball/b517f0db19f3075633c392617452b67690c35d89",
+                "reference": "b517f0db19f3075633c392617452b67690c35d89",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TeaRiot\\YandexGpt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "TeaRiot",
+                    "email": "teaRiot@yandex.ru"
+                }
+            ],
+            "description": "A PHP library for seamless interaction with Yandex GPT (Generative Pre-trained Transformer) API, providing text generation, tokenization, and embedding functionalities.",
+            "homepage": "https://github.com/TeaRiot/php-yandex-gpt",
+            "keywords": [
+                "Yandex GPT",
+                "yandex"
+            ],
+            "support": {
+                "issues": "https://github.com/TeaRiot/php-yandex-gpt/issues",
+                "source": "https://github.com/TeaRiot/php-yandex-gpt/tree/1.1.1"
+            },
+            "time": "2024-04-05T09:38:51+00:00"
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "v2.2.7",
             "source": {
@@ -10992,12 +11040,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.2"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

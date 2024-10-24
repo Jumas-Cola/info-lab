@@ -23,23 +23,25 @@
                 <li class="nav-item"><a class="text-white nav-link" href="{{ route('labs') }}">Лабораторные работы</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="text-white nav-link dropdown-toggle {{ Route::is('calc.*') ? 'active' : '' }}"
+                    <a class="text-white nav-link dropdown-toggle {{ Route::is('activity.*') ? 'active' : '' }}"
                         href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Калькуляторы
+                        Активности
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.base-convert') }}">Перевод
+                        <li class="dropdown-item"><a class="text-dark" href="{{ route('activity.base-convert') }}">Перевод
                                 системы
                                 счисления</a></li>
-                        <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.turing-machine') }}">Машина
+                        <li class="dropdown-item"><a class="text-dark" href="{{ route('activity.turing-machine') }}">Машина
                                 Тьюринга</a>
                         </li>
-                        <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.normal-algo') }}">Нормальные
+                        <li class="dropdown-item"><a class="text-dark" href="{{ route('activity.normal-algo') }}">Нормальные
                                 алгоритмы</a></li>
-                        <li class="dropdown-item"><a class="text-dark" href="{{ route('calc.game-of-life') }}">Игра
+                        <li class="dropdown-item"><a class="text-dark" href="{{ route('activity.game-of-life') }}">Игра
                                 "Жизнь"</a></li>
                         <li class="dropdown-item"><a class="text-dark"
-                                href="{{ route('calc.brython-interpreter') }}">Интерпретатор Python</a></li>
+                                href="{{ route('activity.brython-interpreter') }}">Интерпретатор Python</a></li>
+                        <li class="dropdown-item"><a class="text-dark"
+                                href="{{ route('activity.ai-teacher') }}">AI помощник</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="{{ route('pages') }}"
