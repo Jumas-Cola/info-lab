@@ -76,6 +76,7 @@
                     this.scrollArea = document.getElementById('scrollArea');
                 },
                 send() {
+                    this.message = `${this.message}`.trim();
                     if (this.message?.length > 0) {
                         this.chatMessages.push({
                             text: this.message,
