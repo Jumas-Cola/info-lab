@@ -41,7 +41,7 @@
                             </div>
 
                             <div class="form-outline d-flex mt-3">
-                                <textarea x-model="message" @keyup.shift.enter="send" class="form-control bg-body-tertiary border-1" id="textAreaExample"
+                                <textarea x-model="message" @keyup.shift.enter="send" class="form-control bg-body-tertiary border-1" id="promptTextArea"
                                     rows="4"></textarea>
                                 <div class="d-flex justify-content-center align-items-center">
                                     <button class="btn btn-primary rounded-circle ms-2" type="button" @click="send">
@@ -49,6 +49,10 @@
                                     </button>
                                 </div>
                             </div>
+
+                            <label class="mt-1 text-muted" for="promptTextArea">
+                                Отправить Shift + Enter
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -59,7 +63,7 @@
     <script>
         document.addEventListener('alpine:init', () => {
             Alpine.data('aiChat', () => ({
-                message: null,
+                message: "",
                 scrollArea: null,
                 loading: false,
                 aiClient: null,
@@ -97,7 +101,7 @@
                             this.loading = false;
                         });
 
-                        this.message = null;
+                        this.message = "";
                     }
                 },
             }))
