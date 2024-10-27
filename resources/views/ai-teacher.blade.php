@@ -42,9 +42,10 @@
 
                             <div class="form-outline d-flex mt-3">
                                 <textarea x-model="message" @keyup.shift.enter="send" class="form-control bg-body-tertiary border-1" id="promptTextArea"
-                                    rows="4"></textarea>
+                                    rows="4" x-bind:disabled="loading"></textarea>
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <button class="btn btn-primary rounded-circle ms-2" type="button" @click="send">
+                                    <button class="btn btn-primary rounded-circle ms-2" type="button" @click="send"
+                                        x-bind:disabled="loading">
                                         <i class="bi bi-send"></i>
                                     </button>
                                 </div>
@@ -81,7 +82,7 @@
                 },
                 send() {
                     this.message = `${this.message}`.trim();
-                    if (this.message?.length > 0) {
+                    if (!this.loading && this.message?.length > 0) {
                         this.chatMessages.push({
                             text: this.message,
                             date: new Date().toLocaleString(),
@@ -96,6 +97,11 @@
                                 date: new Date().toLocaleString(),
                                 isTeacher: true
                             })
+                        }).catch((err) => {
+                            if (err?.response?.status === 429) {
+                                Toastify.error('Слишком много запросов',
+                                    'Пожалуйста, попробуйте через минуту');
+                            }
                         }).finally(() => {
                             this.scrollArea.scrollTo(0, this.scrollArea.scrollHeight);
                             this.loading = false;
