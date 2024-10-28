@@ -99,7 +99,7 @@
 
                     <code>
                         <pre>
-q1 0 -> q1 1 R 
+q1 0 -> q1 1 R
 q1 1 -> q1 0 R
 q1 * -> qz * E
 </pre>
@@ -125,8 +125,8 @@ q2 * -> qz 1 E
         </textarea>
 
                     <div class="col-8 mt-2">
-                        <button class="btn btn-success w-25" id="runBtn" type="button">Run</button>
-                        <button class="btn btn-danger w-25" id="stopBtn" type="button">Stop</button>
+                        <button class="btn btn-success w-25" id="runBtn" type="button">Пуск</button>
+                        <button class="btn btn-danger w-25" id="stopBtn" type="button">Стоп</button>
                     </div>
 
                     <label class="col-8 mt-3" for="output">Output:</label>

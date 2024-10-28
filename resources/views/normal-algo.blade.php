@@ -56,8 +56,8 @@ b   -> .1
         </textarea>
 
                     <div class="col-8 d-flex mt-2">
-                        <button class="btn btn-success w-25" id="runBtn" type="button">Run</button>
-                        <button class="btn btn-danger w-25 ms-1" id="stopBtn" type="button">Stop</button>
+                        <button class="btn btn-success w-25" id="runBtn" type="button">Пуск</button>
+                        <button class="btn btn-danger w-25 ms-1" id="stopBtn" type="button">Стоп</button>
                         <div class="d-flex ms-1">
                             <label for="timeInterval">Скорость:</label>
                             <select class="form-select form-select-sm ms-1" name="timeInterval" id="timeInterval"
