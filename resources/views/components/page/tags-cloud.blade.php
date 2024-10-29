@@ -40,7 +40,10 @@
                     this.selectedTags.push(tag);
                     this.selectedTags = [...new Set(this.selectedTags)];
                     var url = new URL(window.location);
-                    url.searchParams.append('tags[]', tag);
+                    url.searchParams.delete('tags[]');
+                    for (let tag of this.selectedTags) {
+                        url.searchParams.append('tags[]', tag);
+                    }
                     location.href = url.toString();
                 },
                 removeTag(tag) {
