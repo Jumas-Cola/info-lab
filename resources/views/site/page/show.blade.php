@@ -11,7 +11,7 @@
         <div class="cover" style="background-image: url({{ $page->image('cover') }})"></div>
     @endif
 
-    <div class="container content mt-4">
+    <div class="container mt-4">
         <div class="w-100 me-5">
             @foreach ($page->tags as $tag)
                 <span class="badge text-bg-primary">{{ $tag->name }}</span>
