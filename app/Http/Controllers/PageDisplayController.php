@@ -19,6 +19,7 @@ class PageDisplayController extends Controller
             ->with('tags');
 
         if (! empty($selectedTags) and is_array($selectedTags)) {
+            $selectedTags = array_unique($selectedTags);
             $pages = $pages->whereHas('tags', function ($query) use ($selectedTags) {
                 $query->whereIn('name', $selectedTags);
             });
