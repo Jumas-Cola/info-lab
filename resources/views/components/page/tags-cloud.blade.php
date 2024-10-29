@@ -38,6 +38,7 @@
                 },
                 selectTag(tag) {
                     this.selectedTags.push(tag);
+                    this.selectedTags = [...new Set(this.selectedTags)];
                     var url = new URL(window.location);
                     url.searchParams.append('tags[]', tag);
                     location.href = url.toString();
