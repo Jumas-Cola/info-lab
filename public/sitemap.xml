@@ -9,15 +9,7 @@
     
             </url>
     <url>
-        <loc>https://info-lab-edu.ru/pages/o-sajte</loc>
-    
-            </url>
-    <url>
         <loc>https://info-lab-edu.ru/activity/turing-machine</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/activity/brython-interpreter</loc>
     
             </url>
     <url>
@@ -33,11 +25,15 @@
     
             </url>
     <url>
-        <loc>https://info-lab-edu.ru/activity/ai-teacher</loc>
+        <loc>https://info-lab-edu.ru/pages/o-sajte</loc>
     
             </url>
     <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye/mnozhestva-i-kortezhi</loc>
+        <loc>https://info-lab-edu.ru/activity/brython-interpreter</loc>
+    
+            </url>
+    <url>
+        <loc>https://info-lab-edu.ru/activity/ai-teacher</loc>
     
             </url>
     <url>
@@ -49,7 +45,7 @@
     
             </url>
     <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye/spiski</loc>
+        <loc>https://info-lab-edu.ru/pages/laboratornye/mnozhestva-i-kortezhi</loc>
     
             </url>
     <url>
@@ -57,7 +53,11 @@
     
             </url>
     <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye/cikly</loc>
+        <loc>https://info-lab-edu.ru/pages/laboratornye/funkcii</loc>
+    
+            </url>
+    <url>
+        <loc>https://info-lab-edu.ru/pages/laboratornye/spiski</loc>
     
             </url>
     <url>
@@ -65,23 +65,11 @@
     
             </url>
     <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye/funkcii</loc>
+        <loc>https://info-lab-edu.ru/pages/laboratornye/cikly</loc>
     
             </url>
     <url>
-        <loc>https://info-lab-edu.ru/pages/test-cikly-v-python</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/test-uslovnye-operatory-i-logicheskie-vyrazheniya-v-python</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/test-spiski-v-python</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/test-funkcii-v-python</loc>
+        <loc>https://info-lab-edu.ru/pages/iteratory</loc>
     
             </url>
     <url>
@@ -90,6 +78,34 @@
             </url>
     <url>
         <loc>https://info-lab-edu.ru/pages/elektronnye-obrazovatelnye-resursy</loc>
+    
+            </url>
+    <url>
+        <loc>https://info-lab-edu.ru/pages/testy</loc>
+    
+            </url>
+    <url>
+        <loc>https://info-lab-edu.ru/pages/testy/test-cikly-v-python</loc>
+    
+            </url>
+    <url>
+        <loc>https://info-lab-edu.ru/pages/testy/test-uslovnye-operatory-i-logicheskie-vyrazheniya-v-python</loc>
+    
+            </url>
+    <url>
+        <loc>https://info-lab-edu.ru/pages/testy/test-funkcii-v-python</loc>
+    
+            </url>
+    <url>
+        <loc>https://info-lab-edu.ru/pages/testy/test-spiski-v-python</loc>
+    
+            </url>
+    <url>
+        <loc>https://info-lab-edu.ru/pages/testy/test-mnozhestva-i-kortezhi-v-python</loc>
+    
+            </url>
+    <url>
+        <loc>https://info-lab-edu.ru/pages/testy/test-slovari-v-python</loc>
     
             </url>
 </urlset>
