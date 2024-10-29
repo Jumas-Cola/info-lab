@@ -2,8 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="{{ $description ?? config('app.name', 'Laravel') }}" />
+    <meta name="description" content="{{ $description ?? $title ?? config('app.name', 'Laravel') }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ config('app.url') }}/favicon.ico" type="image/x-icon">
 
     <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
 
