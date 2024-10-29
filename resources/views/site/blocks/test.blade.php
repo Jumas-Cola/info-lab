@@ -76,6 +76,7 @@
             answers: {},
             errors: {},
             results: {},
+            stats: {},
             checkAnswersUrl: "{{ route('test-check') }}",
             allAnswered: false,
             testId: {{ $block->id }},
