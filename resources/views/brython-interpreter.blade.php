@@ -17,7 +17,7 @@
                 input: document.querySelector('#input_{{$block->id}}'),
                 init() {
                     this.editor = new EditorView({
-                        extensions: [basicSetup, python()],
+                        extensions: [basicSetup, tokyoNight, python()],
                         parent: document.querySelector('#editor_{{$block->id}}'),
                     });
 
