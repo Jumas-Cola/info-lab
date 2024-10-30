@@ -13,8 +13,10 @@
         "vite-plugin-static-copy": "^1.0.6"
     },
     "dependencies": {
+        "@babel/runtime": "^7.26.0",
         "@codemirror/lang-python": "^6.1.6",
         "@popperjs/core": "^2.11.8",
+        "@uiw/codemirror-theme-tokyo-night": "^4.23.6",
         "alpinejs": "^3.14.0",
         "bootstrap": "^5.3.3",
         "bootstrap-icons": "^1.11.3",
