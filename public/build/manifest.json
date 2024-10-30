@@ -8,7 +8,7 @@
     "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
   },
   "resources/css/app.scss": {
-    "file": "assets/app-DHZxhc-O.css",
+    "file": "assets/app-CdPFRffx.css",
     "src": "resources/css/app.scss",
     "isEntry": true
   },
@@ -181,12 +181,12 @@
     "src": "resources/images/testimonial-author.jpg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-Bwb39Nu5.js",
+    "file": "assets/app-dPVpMXiZ.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-DHZxhc-O.css"
+      "assets/app-CdPFRffx.css"
     ],
     "assets": [
       "assets/bootstrap-icons-BtvjY1KL.woff2",

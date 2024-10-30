@@ -31,7 +31,7 @@
 }
 
 .page-main-content {
-    min-height: 80vh;
+  min-height: 80vh;
 }
 
 .cover {
@@ -142,4 +142,9 @@ span.toastify-content {
   --bs-toast-color: var(--bs-info);
   --bs-toast-bg: var(--bs-info-bg-subtle);
   --bs-toast-border-color: var(--bs-info-border-color);
+}
+
+// HLJS
+pre code.hljs {
+  padding: 0px;
 }

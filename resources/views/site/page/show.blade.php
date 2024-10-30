@@ -56,7 +56,7 @@
                 var codeNew = document.createElement('code');
                 codeNew.className = 'language-python';
                 var pre = document.createElement('pre');
-                codeNew.innerHTML = code.innerHTML;
+                codeNew.textContent = code.textContent;
 
                 pre.appendChild(codeNew);
                 code.parentNode.replaceChild(pre, code);
