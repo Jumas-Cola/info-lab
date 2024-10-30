@@ -148,3 +148,7 @@ span.toastify-content {
 pre code.hljs {
   padding: 0px;
 }
+
+p:has(> pre) {
+  margin-bottom: 0px;
+}
