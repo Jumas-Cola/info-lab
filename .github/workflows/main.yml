@@ -36,11 +36,45 @@ jobs:
       - name: Get latest code
         uses: actions/checkout@v4
 
-      - uses: nick-fields/retry@v3
-      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          timeout_minutes: 1
-          max_attempts: 5
+          server: vh428.timeweb.ru
+          username: cp17145
+          password: ${{ secrets.ftp_password }}
+          server-dir: /info-lab/
+          timeout: 100000
+
+  rerun-failed-web-deploy-1:
+    name: Rerun Deploy
+    runs-on: ubuntu-latest
+    needs: [build-frontend,web-deploy]
+    if: failure()
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: vh428.timeweb.ru
+          username: cp17145
+          password: ${{ secrets.ftp_password }}
+          server-dir: /info-lab/
+          timeout: 100000
+
+  rerun-failed-web-deploy-2:
+    name: Rerun Deploy
+    runs-on: ubuntu-latest
+    needs: [build-frontend,web-deploy,rerun-failed-web-deploy-1]
+    if: failure()
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
           server: vh428.timeweb.ru
           username: cp17145
           password: ${{ secrets.ftp_password }}
