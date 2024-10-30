@@ -39,7 +39,9 @@ https://templatemo.com/tm-586-scholar
 
     <x-nav.header />
 
-    {{ $slot }}
+    <div class="page-main-content">
+        {{ $slot }}
+    </div>
 
     <x-nav.scroll-top-btn />
 
