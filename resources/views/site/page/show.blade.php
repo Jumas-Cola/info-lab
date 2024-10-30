@@ -27,7 +27,8 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-3">
             @foreach ($page->children as $child)
                 <div class="col">
-                    <a class="w-100" href="{{ route('frontend.page', ['slug' => $child->getNestedSlug()]) }}" type="button">
+                    <a class="w-100" href="{{ route('frontend.page', ['slug' => $child->getNestedSlug()]) }}"
+                        type="button">
                         <div class="card shadow-sm">
                             <img class="card-img-top" width="100%" height="225"
                                 src="{{ Str::startswith($child->image('cover'), 'data:') ? Vite::asset('resources/images/placeholder-02.jpg') : $child->image('cover') }}" />
@@ -53,12 +54,14 @@
             const codes = document.querySelectorAll('code');
             for (let code of codes) {
                 var codeNew = document.createElement('code');
+                codeNew.className = 'language-python';
                 var pre = document.createElement('pre');
-                pre.innerHTML = code.innerHTML;
+                codeNew.innerHTML = code.innerHTML;
 
-                codeNew.appendChild(pre);
-                code.parentNode.replaceChild(codeNew, code);
+                pre.appendChild(codeNew);
+                code.parentNode.replaceChild(pre, code);
             }
+            hljs.highlightAll();
         })
     </script>
 </x-main-layout>

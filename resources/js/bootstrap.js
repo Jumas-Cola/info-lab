@@ -29,3 +29,10 @@ window.Toastify = Toastify;
 import { marked } from 'marked';
 
 window.marked = marked;
+
+import hljs from 'highlight.js/lib/core';
+import python from 'highlight.js/lib/languages/python';
+
+hljs.registerLanguage('python', python);
+
+window.hljs = hljs;

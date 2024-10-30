@@ -8,6 +8,7 @@ export default defineConfig({
     alias: {
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
       '~bootstrap-icons': path.resolve(__dirname, 'node_modules/bootstrap-icons'),
+      '~highlight.js': path.resolve(__dirname, 'node_modules/highlight.js'),
     },
   },
   plugins: [
