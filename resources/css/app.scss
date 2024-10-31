@@ -30,6 +30,28 @@
   display: none;
 }
 
+#btnAiChat {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  border-width: 1px;
+  border-color: #fff;
+  z-index: 999;
+  display: block;
+}
+
+.chat-popup {
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  z-index: 9;
+  max-width: 50%;
+
+  @media (max-width: 992px) {
+    max-width: 100%;
+  }
+}
+
 .page-main-content {
   min-height: 80vh;
 }

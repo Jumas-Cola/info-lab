@@ -51,10 +51,6 @@
                             <a class="d-block w-100 h-100 text-dark"
                                 href="{{ route('activity.brython-interpreter') }}">Интерпретатор Python</a>
                         </li>
-                        <li class="dropdown-item">
-                            <a class="d-block w-100 h-100 text-dark" href="{{ route('activity.ai-teacher') }}">AI
-                                помощник</a>
-                        </li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="{{ route('pages') }}"

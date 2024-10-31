@@ -31,8 +31,8 @@ Route::prefix('activity')->name('activity.')->group(function () {
     Route::get('brython-interpreter', [BrythonController::class, 'index'])
         ->name('brython-interpreter');
 
-    Route::get('ai-teacher', [AiTeacherController::class, 'index'])
-        ->name('ai-teacher');
+    /*Route::get('ai-teacher', [AiTeacherController::class, 'index'])*/
+    /*    ->name('ai-teacher');*/
     Route::post('ai-teacher/chat', [AiTeacherController::class, 'send'])
         ->middleware('throttle:20,1')
         ->name('ai-teacher.chat');

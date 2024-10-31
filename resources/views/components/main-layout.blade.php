@@ -45,6 +45,8 @@ https://templatemo.com/tm-586-scholar
 
     <x-nav.scroll-top-btn />
 
+    <x-nav.ai-chat-btn />
+
     <x-nav.use-cookie />
 
     <x-nav.footer />
