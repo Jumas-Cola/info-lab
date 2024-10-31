@@ -68,7 +68,6 @@
                 scrollArea: null,
                 loading: false,
                 aiClient: null,
-                md: markdownit(),
                 aiChatUrl: "{{ route('activity.ai-teacher.chat') }}",
                 teacherAvatar: "{{ Vite::asset('resources/images/service-03.png') }}",
                 userAvatar: "{{ Vite::asset('resources/images/placeholder.jpg') }}",
@@ -83,6 +82,32 @@
                 },
                 send() {
                     this.message = `${this.message}`.trim();
+                    const md = markdownit({
+                        html: true,
+                        highlight: function(str, lang) {
+                            if (lang && hljs.getLanguage(lang)) {
+                                try {
+                                    return '<pre><code class="hljs">' +
+                                        hljs.highlight(str, {
+                                            language: lang,
+                                            ignoreIllegals: true
+                                        }).value +
+                                        '</code></pre>';
+                                } catch (__) {}
+                            }
+
+                            return '<pre><code class="hljs">' + md.utils.escapeHtml(str) +
+                                '</code></pre>';
+                        }
+                    }).use(tm, {
+                        engine: katex,
+                        delimiters: "dollars",
+                        katexOptions: {
+                            macros: {
+                                "\\RR": "\\mathbb{R}",
+                            }
+                        }
+                    });
                     if (!this.loading && this.message?.length > 0) {
                         this.chatMessages.push({
                             text: this.message,
@@ -94,7 +119,7 @@
                         this.loading = true;
                         this.aiClient.send(this.message).then(res => {
                             this.chatMessages.push({
-                                text: md.rend(res?.data.text),
+                                text: md.render(res?.data.text),
                                 date: new Date().toLocaleString(),
                                 isTeacher: true
                             })

@@ -27,8 +27,12 @@ Toastify.setOption('position', 'top-right');
 window.Toastify = Toastify;
 
 import markdownit from 'markdown-it';
+import { default as tm } from 'markdown-it-texmath';
+import katex from 'katex';
 
 window.markdownit = markdownit;
+window.tm = tm;
+window.katex = katex;
 
 import hljs from 'highlight.js/lib/core';
 import python from 'highlight.js/lib/languages/python';

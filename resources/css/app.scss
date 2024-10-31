@@ -152,3 +152,8 @@ pre code.hljs {
 p:has(> pre) {
   margin-bottom: 0px;
 }
+
+// Markdown
+[aria-hidden='true'] {
+  display: none;
+}
