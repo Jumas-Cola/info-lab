@@ -35,10 +35,10 @@
                         <img src="{{ Vite::asset('resources/images/service-03.png') }}" alt="web experts">
                     </div>
                     <div class="main-content">
-                        <h4>Онлайн активности</h4>
-                        <p>Онлайн активности на разные случаи жизни.</p>
+                        <h4>AI ассистент</h4>
+                        <p>AI ассистент для помощи в обучении.</p>
                         <div class="main-button">
-                            <a href="{{ route('activity.base-convert') }}">Перейти</a>
+                            <a href="{{ route('activity.ai-teacher') }}">Перейти</a>
                         </div>
                     </div>
                 </div>
