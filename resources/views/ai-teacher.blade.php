@@ -68,6 +68,7 @@
                 scrollArea: null,
                 loading: false,
                 aiClient: null,
+                md: markdownit(),
                 aiChatUrl: "{{ route('activity.ai-teacher.chat') }}",
                 teacherAvatar: "{{ Vite::asset('resources/images/service-03.png') }}",
                 userAvatar: "{{ Vite::asset('resources/images/placeholder.jpg') }}",
@@ -93,7 +94,7 @@
                         this.loading = true;
                         this.aiClient.send(this.message).then(res => {
                             this.chatMessages.push({
-                                text: marked.parse(res?.data.text),
+                                text: md.rend(res?.data.text),
                                 date: new Date().toLocaleString(),
                                 isTeacher: true
                             })

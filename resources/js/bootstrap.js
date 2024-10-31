@@ -26,9 +26,9 @@ import Toastify from 'toastify';
 Toastify.setOption('position', 'top-right');
 window.Toastify = Toastify;
 
-import { marked } from 'marked';
+import markdownit from 'markdown-it';
 
-window.marked = marked;
+window.markdownit = markdownit;
 
 import hljs from 'highlight.js/lib/core';
 import python from 'highlight.js/lib/languages/python';
