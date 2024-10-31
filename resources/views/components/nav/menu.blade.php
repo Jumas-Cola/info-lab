@@ -28,20 +28,33 @@
                         Активности
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a class="text-dark" href="{{ route('activity.base-convert') }}">Перевод
+                        <li class="dropdown-item">
+                            <a class="d-block w-100 h-100 text-dark" href="{{ route('activity.base-convert') }}">Перевод
                                 системы
-                                счисления</a></li>
-                        <li class="dropdown-item"><a class="text-dark" href="{{ route('activity.turing-machine') }}">Машина
+                                счисления</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a class="d-block w-100 h-100 text-dark"
+                                href="{{ route('activity.turing-machine') }}">Машина
                                 Тьюринга</a>
                         </li>
-                        <li class="dropdown-item"><a class="text-dark" href="{{ route('activity.normal-algo') }}">Нормальные
-                                алгоритмы</a></li>
-                        <li class="dropdown-item"><a class="text-dark" href="{{ route('activity.game-of-life') }}">Игра
-                                "Жизнь"</a></li>
-                        <li class="dropdown-item"><a class="text-dark"
-                                href="{{ route('activity.brython-interpreter') }}">Интерпретатор Python</a></li>
-                        <li class="dropdown-item"><a class="text-dark"
-                                href="{{ route('activity.ai-teacher') }}">AI помощник</a></li>
+                        <li class="dropdown-item">
+                            <a class="d-block w-100 h-100 text-dark"
+                                href="{{ route('activity.normal-algo') }}">Нормальные
+                                алгоритмы</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a class="d-block w-100 h-100 text-dark" href="{{ route('activity.game-of-life') }}">Игра
+                                "Жизнь"</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a class="d-block w-100 h-100 text-dark"
+                                href="{{ route('activity.brython-interpreter') }}">Интерпретатор Python</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a class="d-block w-100 h-100 text-dark" href="{{ route('activity.ai-teacher') }}">AI
+                                помощник</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="{{ route('pages') }}"
