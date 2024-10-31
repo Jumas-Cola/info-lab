@@ -226,13 +226,13 @@ q2 * -> qz 1 E
             }
         }
 
-        var tm = new TM();
+        const turingMachine = new TM();
         runBtn.onclick = function() {
-            tm.execute(document.querySelector('#tape').value,
+            turingMachine.execute(document.querySelector('#tape').value,
                 document.querySelector('#program').value);
         };
         stopBtn.onclick = function() {
-            tm.stopSwitch();
+            turingMachine.stopSwitch();
         };
     </script>
 </x-main-layout>
