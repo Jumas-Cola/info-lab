@@ -38,7 +38,8 @@
                         <h4>AI ассистент</h4>
                         <p>AI ассистент для помощи в обучении.</p>
                         <div class="main-button">
-                            <a role="button" x-data @click="document.querySelector('#btnAiChat').click()">Открыть</a>
+                            <a class="btn-primary" role="button" x-data
+                                @click="document.querySelector('#btnAiChat').click()">Открыть</a>
                         </div>
                     </div>
                 </div>
