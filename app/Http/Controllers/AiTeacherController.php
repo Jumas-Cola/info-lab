@@ -66,8 +66,8 @@ class AiTeacherController extends Controller
         }
 
         $completion->setModelUri($this->folderId, 'yandexgpt-lite/latest')
-            ->setTextMaxCount(21)
-            ->setTextLength(50000)
+            ->setTextMaxCount(5)
+            ->setTextLength(30000)
             ->addText($context);
 
         $result = $this->yandexGpt->request($completion);
