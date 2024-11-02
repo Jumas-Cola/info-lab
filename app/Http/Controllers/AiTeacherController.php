@@ -30,56 +30,54 @@ class AiTeacherController extends Controller
     {
         $messages = $request->get('messages');
 
-        if (! empty($messages) and is_array($messages)) {
-            $completion = new Completion;
-            $completion->setMaxTokens(2000);
+        $completion = new Completion;
+        $completion->setMaxTokens(2000);
 
-            $context = [
-                [
-                    'role' => $completion::SYSTEM,
-                    'text' => 'Ты учитель информатики. Твоя задача - подробно и понятно отвечать на вопросы или объяснять.',
-                ],
-            ];
+        $context = [
+            [
+                'role' => $completion::SYSTEM,
+                'text' => 'Ты учитель информатики. Твоя задача - подробно и понятно отвечать на вопросы или объяснять.',
+            ],
+        ];
 
-            foreach ($messages as $message) {
-                if ($message['isTeacher']) {
-                    $context[] = [
-                        'role' => $completion::ASSISTANT,
-                        'text' => $message['text'],
-                    ];
-                } else {
-                    $validator = Validator::make($message, [
-                        'text' => 'required|max:2000',
-                    ]);
+        foreach ($messages as $message) {
+            if ($message['isTeacher']) {
+                $context[] = [
+                    'role' => $completion::ASSISTANT,
+                    'text' => $message['text'],
+                ];
+            } else {
+                $validator = Validator::make($message, [
+                    'text' => 'required|max:2000',
+                ]);
 
-                    if ($validator->fails()) {
-                        return response()->json([
-                            'code' => 413,
-                            'message' => 'Payload Too Large',
-                        ], 413);
-                    }
-
-                    $context[] = [
-                        'role' => $completion::USER,
-                        'text' => $message['text'],
-                    ];
+                if ($validator->fails()) {
+                    return response()->json([
+                        'code' => 413,
+                        'message' => 'Payload Too Large',
+                    ], 413);
                 }
+
+                $context[] = [
+                    'role' => $completion::USER,
+                    'text' => $message['text'],
+                ];
             }
-
-            $completion->setModelUri($this->folderId, 'yandexgpt-lite/latest')
-                ->setTextMaxCount(21)
-                ->setTextLength(50000)
-                ->addText($context);
-
-            $result = $this->yandexGpt->request($completion);
-
-            $response = json_decode($result, true);
-
-            return response()->json([
-                'text' => $response['result']['alternatives'][0]['message']['text'],
-                'isTeacher' => true,
-                'data' => now(),
-            ]);
         }
+
+        $completion->setModelUri($this->folderId, 'yandexgpt-lite/latest')
+            ->setTextMaxCount(21)
+            ->setTextLength(50000)
+            ->addText($context);
+
+        $result = $this->yandexGpt->request($completion);
+
+        $response = json_decode($result, true);
+
+        return response()->json([
+            'text' => $response['result']['alternatives'][0]['message']['text'],
+            'isTeacher' => true,
+            'data' => now(),
+        ]);
     }
 }

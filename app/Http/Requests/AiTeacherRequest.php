@@ -22,7 +22,7 @@ class AiTeacherRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'messages' => 'required|array',
+            'messages' => 'required|array|min:1|max:20',
         ];
     }
 }
