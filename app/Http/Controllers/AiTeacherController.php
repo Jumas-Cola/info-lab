@@ -31,7 +31,7 @@ class AiTeacherController extends Controller
         $messages = $request->get('messages');
 
         $completion = new Completion;
-        $completion->setMaxTokens(2000);
+        $completion->setMaxTokens(1000);
 
         $context = [
             [
@@ -48,7 +48,7 @@ class AiTeacherController extends Controller
                 ];
             } else {
                 $validator = Validator::make($message, [
-                    'text' => 'required|max:2000',
+                    'text' => 'required|max:1000',
                 ]);
 
                 if ($validator->fails()) {

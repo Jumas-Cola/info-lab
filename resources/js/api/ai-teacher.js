@@ -1,7 +1,7 @@
 class AiTeacherApi {
   constructor(baseUrl) {
     this.baseUrl = baseUrl;
-    this.contextLength = 20;
+    this.contextLength = 6;
   }
 
   async send(messages) {
