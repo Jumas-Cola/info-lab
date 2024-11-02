@@ -36,13 +36,23 @@
             </div>
 
             <div class="form-outline d-flex mt-3">
-                <textarea x-model="message" @keyup.shift.enter="send" class="form-control bg-body-tertiary border-1" id="promptTextArea"
-                    rows="4" x-bind:disabled="loading"></textarea>
+                <textarea autofocus x-model="message" @keyup.shift.enter="send" class="form-control bg-body-tertiary border-1"
+                    id="promptTextArea" rows="4" x-bind:disabled="loading"></textarea>
                 <div class="d-flex justify-content-center align-items-center">
-                    <button class="btn btn-primary rounded-circle ms-2" type="button" @click="send"
-                        x-bind:disabled="loading">
-                        <i class="bi bi-send"></i>
-                    </button>
+                    <div>
+                        <div>
+                            <button title="Отправить сообщение" class="btn btn-primary rounded-circle ms-2"
+                                type="button" @click="send" x-bind:disabled="loading">
+                                <i class="bi bi-send"></i>
+                            </button>
+                        </div>
+                        <div class="mt-1">
+                            <button title="Сбросить контекст" class="btn btn-secondary rounded-circle ms-2"
+                                type="button" @click="resetContext" x-bind:disabled="loading">
+                                <i class="bi bi-arrow-clockwise"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -57,11 +67,17 @@
             Alpine.data('aiChat', () => ({
                 message: "",
                 scrollArea: null,
+                textArea: null,
                 loading: false,
                 aiClient: null,
                 aiChatUrl: "{{ route('activity.ai-teacher.chat') }}",
                 teacherAvatar: "{{ Vite::asset('resources/images/service-03.png') }}",
                 userAvatar: "{{ Vite::asset('resources/images/placeholder.jpg') }}",
+                initChatMessages: [{
+                    text: "Привет, ты можешь задать мне любой вопрос по информатике, и я постараюсь на него ответить.",
+                    date: "2022-01-01 12:00:00",
+                    isTeacher: true
+                }, ],
                 chatMessages: [{
                     text: "Привет, ты можешь задать мне любой вопрос по информатике, и я постараюсь на него ответить.",
                     date: "2022-01-01 12:00:00",
@@ -70,6 +86,10 @@
                 init() {
                     this.aiClient = new AiTeacherApi(this.aiChatUrl);
                     this.scrollArea = document.getElementById('scrollArea');
+                    this.textArea = document.getElementById('promptTextArea');
+                },
+                resetContext() {
+                    this.chatMessages = [...this.initChatMessages];
                 },
                 send() {
                     this.message = `${this.message}`.trim();
@@ -108,7 +128,7 @@
                         this.scrollArea.scrollTo(0, this.scrollArea.scrollHeight);
 
                         this.loading = true;
-                        this.aiClient.send(this.message).then(res => {
+                        this.aiClient.send(this.chatMessages).then(res => {
                             this.chatMessages.push({
                                 text: md.render(res?.data.text),
                                 date: new Date().toLocaleString(),
@@ -122,6 +142,11 @@
                         }).finally(() => {
                             this.scrollArea.scrollTo(0, this.scrollArea.scrollHeight);
                             this.loading = false;
+                            setTimeout(() => {
+                                this.textArea.focus({
+                                    focusVisible: true
+                                });
+                            }, 100);
                         });
 
                         this.message = "";

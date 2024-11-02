@@ -27,22 +27,35 @@ class AiTeacherController extends Controller
 
     public function send(Request $request)
     {
-        $message = $request->get('message');
+        $messages = $request->get('messages');
 
-        if (! empty($message)) {
-            $completion = new Completion;
+        if (! empty($messages) and is_array($messages)) {
+            $completion = new Completion();
+
+            $context = [
+                [
+                    'role' => $completion::SYSTEM,
+                    'text' => 'Ты учитель информатики. Твоя задача - подробно и понятно отвечать на вопросы или объяснять.',
+                ],
+            ];
+
+            foreach ($messages as $message) {
+                if ($message['isTeacher']) {
+                    $context[] = [
+                        'role' => $completion::ASSISTANT,
+                        'text' => $message['text'],
+                    ];
+                } else {
+                    $context[] = [
+                        'role' => $completion::USER,
+                        'text' => $message['text'],
+                    ];
+                }
+            }
 
             $completion->setModelUri($this->folderId, 'yandexgpt-lite/latest')
-                ->addText([
-                    [
-                        'role' => $completion::SYSTEM,
-                        'text' => 'Ты учитель информатики. Твоя задача - подробно и понятно отвечать на вопросы или объяснять.',
-                    ],
-                    [
-                        'role' => $completion::USER,
-                        'text' => $message,
-                    ],
-                ]);
+                ->setTextMaxCount(21)
+                ->addText($context);
 
             $result = $this->yandexGpt->request($completion);
 

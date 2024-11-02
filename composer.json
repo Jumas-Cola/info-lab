@@ -7,10 +7,10 @@
     "require": {
         "php": "^8.2",
         "area17/twill": "^3.0",
+        "jumas-cola/php-yandex-gpt": "^1.0",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
-        "spatie/laravel-sitemap": "^7.2",
-        "teariot/php-yandex-gpt": "*"
+        "spatie/laravel-sitemap": "^7.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
