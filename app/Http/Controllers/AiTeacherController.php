@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\AiTeacherRequest;
+use Illuminate\Support\Facades\Validator;
 use TeaRiot\YandexGpt\Cloud;
 use TeaRiot\YandexGpt\Methods\Completion;
 
@@ -25,12 +26,13 @@ class AiTeacherController extends Controller
         return view('ai-teacher');
     }
 
-    public function send(Request $request)
+    public function send(AiTeacherRequest $request)
     {
         $messages = $request->get('messages');
 
         if (! empty($messages) and is_array($messages)) {
-            $completion = new Completion();
+            $completion = new Completion;
+            $completion->setMaxTokens(2000);
 
             $context = [
                 [
@@ -46,6 +48,17 @@ class AiTeacherController extends Controller
                         'text' => $message['text'],
                     ];
                 } else {
+                    $validator = Validator::make($message, [
+                        'text' => 'required|max:2000',
+                    ]);
+
+                    if ($validator->fails()) {
+                        return response()->json([
+                            'code' => 413,
+                            'message' => 'Payload Too Large',
+                        ], 413);
+                    }
+
                     $context[] = [
                         'role' => $completion::USER,
                         'text' => $message['text'],
@@ -55,6 +68,7 @@ class AiTeacherController extends Controller
 
             $completion->setModelUri($this->folderId, 'yandexgpt-lite/latest')
                 ->setTextMaxCount(21)
+                ->setTextLength(20000)
                 ->addText($context);
 
             $result = $this->yandexGpt->request($completion);

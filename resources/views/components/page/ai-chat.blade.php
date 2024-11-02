@@ -36,8 +36,8 @@
             </div>
 
             <div class="form-outline d-flex mt-3">
-                <textarea autofocus x-model="message" @keyup.shift.enter="send" class="form-control bg-body-tertiary border-1"
-                    id="promptTextArea" rows="4" x-bind:disabled="loading"></textarea>
+                <textarea autofocus maxlength="2000" x-model="message" @keyup.shift.enter="send"
+                    class="form-control bg-body-tertiary border-1" id="promptTextArea" rows="4" x-bind:disabled="loading"></textarea>
                 <div class="d-flex justify-content-center align-items-center">
                     <div>
                         <div>
