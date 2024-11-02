@@ -2,7 +2,7 @@
     <div x-data="aiChat">
         <div class="card-body">
             <div id="scrollArea" class="overflow-auto" style="height: 400px;">
-                <template x-for="(msg, index) in chatMessages" :key="index">
+                <template x-for="(msg, index) in renderedChatMessages" :key="index">
                     <div>
                         <template x-if="msg.isTeacher">
                             <div class="d-flex flex-row justify-content-start mb-4">
@@ -78,18 +78,17 @@
                     date: "2022-01-01 12:00:00",
                     isTeacher: true
                 }, ],
-                chatMessages: [{
-                    text: "Привет, ты можешь задать мне любой вопрос по информатике, и я постараюсь на него ответить.",
-                    date: "2022-01-01 12:00:00",
-                    isTeacher: true
-                }, ],
+                chatMessages: null,
+                renderedChatMessages: null,
                 init() {
                     this.aiClient = new AiTeacherApi(this.aiChatUrl);
                     this.scrollArea = document.getElementById('scrollArea');
                     this.textArea = document.getElementById('promptTextArea');
+                    this.resetContext();
                 },
                 resetContext() {
                     this.chatMessages = [...this.initChatMessages];
+                    this.renderedChatMessages = [...this.initChatMessages];
                 },
                 send() {
                     this.message = `${this.message}`.trim();
@@ -120,16 +119,23 @@
                         }
                     });
                     if (!this.loading && this.message?.length > 0) {
-                        this.chatMessages.push({
+                        let messageObj = {
                             text: this.message,
                             date: new Date().toLocaleString(),
                             isTeacher: false
-                        })
+                        };
+                        this.chatMessages.push(messageObj);
+                        this.renderedChatMessages.push(messageObj);
                         this.scrollArea.scrollTo(0, this.scrollArea.scrollHeight);
 
                         this.loading = true;
                         this.aiClient.send(this.chatMessages).then(res => {
                             this.chatMessages.push({
+                                text: res?.data.text,
+                                date: new Date().toLocaleString(),
+                                isTeacher: true
+                            })
+                            this.renderedChatMessages.push({
                                 text: md.render(res?.data.text),
                                 date: new Date().toLocaleString(),
                                 isTeacher: true
