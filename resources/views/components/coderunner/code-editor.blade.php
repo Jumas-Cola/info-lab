@@ -4,10 +4,6 @@
     @vite(['resources/js/codemirror.js'])
 
     <div class="mt-3" x-data="codeRunner_{{ $block->id }}">
-        <div class="fs-5">
-            Напишите код здесь:
-        </div>
-
         <div id="editor_{{ $block->id }}">
         </div>
 
