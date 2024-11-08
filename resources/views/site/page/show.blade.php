@@ -8,7 +8,13 @@
     </x-slot>
 
     @if (!Str::startsWith($page->image('cover'), 'data'))
-        <div class="cover" style="background-image: url({{ $page->image('cover') }})"></div>
+        <div class="cover d-flex" style="background-image: url({{ $page->image('cover') }})">
+            <div class="overlay d-flex">
+                <div class="container d-flex align-items-end">
+                    <h1 class="text-white fw-bold mb-2 mb-md-5">{{ $page->title }}</h1>
+                </div>
+            </div>
+        </div>
     @endif
 
     <div class="container mt-4">
@@ -17,9 +23,10 @@
                 <span class="badge text-bg-primary">{{ $tag->name }}</span>
             @endforeach
 
-            <h1 class="mt-3">{{ $page->title }}</h1>
 
-            {!! $page->renderBlocks() !!}
+            <div class="mt-3 mt-md-5">
+                {!! $page->renderBlocks() !!}
+            </div>
         </div>
     </div>
 
