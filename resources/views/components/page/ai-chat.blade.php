@@ -19,7 +19,7 @@
                             <div class="d-flex flex-row justify-content-end mb-4">
                                 <div class="p-3 me-3 border bg-body-tertiary"
                                     style="border-radius: 15px; max-width: 75%;">
-                                    <p class="small mb-0" x-text="msg.text"></p>
+                                    <p class="small mb-0" x-html="msg.text" style="white-space: pre;"></p>
                                 </div>
                                 <img class="rounded-circle h-100" :src="userAvatar" alt="avatar 1"
                                     style="width: 45px;">
@@ -80,6 +80,11 @@
                 }, ],
                 chatMessages: null,
                 renderedChatMessages: null,
+                stripTags(html) {
+                    const div = document.createElement("div");
+                    div.innerHTML = html;
+                    return div.textContent || div.innerText || "";
+                },
                 init() {
                     this.aiClient = new AiTeacherApi(this.aiChatUrl);
                     this.scrollArea = document.getElementById('scrollArea');
@@ -120,7 +125,7 @@
                     });
                     if (!this.loading && this.message?.length > 0) {
                         let messageObj = {
-                            text: this.message,
+                            text: this.stripTags(this.message).replaceAll('\n', '<br>'),
                             date: new Date().toLocaleString(),
                             isTeacher: false
                         };
