@@ -31,7 +31,7 @@
                     <p>Чтобы узнать больше, посетите страницу "О нас".</p>
                     <div class="main-button">
                         <a
-                            href="{{ !$siteSettings->getRelated('pageAbout')->empty()
+                            href="{{ !$siteSettings->getRelated('pageAbout')->isEmpty()
                                 ? route('frontend.page', ['slug' => $siteSettings->getRelated('pageAbout')->first()->getActiveSlug()['slug']])
                                 : '#' }}">Подробнее</a>
                     </div>
