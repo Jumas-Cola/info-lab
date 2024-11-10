@@ -4,6 +4,13 @@
 
 <x-twill::input name="logo" label="Лого" />
 
+<x-twill::browser
+    module-name="pages"
+    name="pageAbout"
+    label="Ссылка на страницу О сайте"
+    :max="1"
+/>
+
 <x-twill::repeater type="homepage_question" />
 
 <x-twill::repeater type="fun_facts" />

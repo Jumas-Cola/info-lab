@@ -30,7 +30,10 @@
                     <h2>Хотите узнать больше о нас?</h2>
                     <p>Чтобы узнать больше, посетите страницу "О нас".</p>
                     <div class="main-button">
-                        <a href="{{ route('about') }}">Подробнее</a>
+                        <a
+                            href="{{ !$siteSettings->getRelated('pageAbout')->empty()
+                                ? route('frontend.page', ['slug' => $siteSettings->getRelated('pageAbout')->first()->getActiveSlug()['slug']])
+                                : '#' }}">Подробнее</a>
                     </div>
                 </div>
             </div>
