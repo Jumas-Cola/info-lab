@@ -125,11 +125,12 @@
                     });
                     if (!this.loading && this.message?.length > 0) {
                         let messageObj = {
-                            text: this.stripTags(this.message).replaceAll('\n', '<br>'),
+                            text: this.stripTags(this.message),
                             date: new Date().toLocaleString(),
                             isTeacher: false
                         };
                         this.chatMessages.push(messageObj);
+                        messageObj.text = messageObj.text.replaceAll('\n', '<br>');
                         this.renderedChatMessages.push(messageObj);
                         this.scrollArea.scrollTo(0, this.scrollArea.scrollHeight);
 
@@ -141,7 +142,7 @@
                                 isTeacher: true
                             })
                             this.renderedChatMessages.push({
-                                text: md.render(res?.data.text),
+                                text: md.render(res?.data.text).replaceAll('\n', '<br>'),
                                 date: new Date().toLocaleString(),
                                 isTeacher: true
                             })
