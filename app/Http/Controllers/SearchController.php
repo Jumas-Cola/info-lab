@@ -22,10 +22,17 @@ class SearchController extends Controller
         $results = $this->pageRepository
             ->notHidden()
             ->where('title', 'like', "%{$query}%")
+            ->with('parent')
             ->limit(10)
             ->get()->map(function ($page) {
+                $parentTitle = $page->parent ? $page->parent->title : '';
+                $title = $page->title;
+                if ($parentTitle) {
+                    $title = "{$parentTitle} - {$title}";
+                }
+
                 return [
-                    'title' => $page->title,
+                    'title' => $title,
                     'url' => url("pages/{$page->getNestedSlug()}"),
                 ];
             });
