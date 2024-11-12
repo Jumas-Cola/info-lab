@@ -1,111 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-    <url>
-        <loc>https://info-lab-edu.ru/</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/activity/turing-machine</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/activity/normal-algo</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/activity/base-convert</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/activity/game-of-life</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/o-sajte</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/activity/brython-interpreter</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/activity/ai-teacher</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye/mnozhestva-i-kortezhi</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye/slovari</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye/funkcii</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye/spiski</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye/uslovnye-operatory-i-logicheskie-vyrazheniya</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye/cikly</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/iteratory</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/laboratornye/hello-world</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/elektronnye-obrazovatelnye-resursy</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/testy</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/testy/test-cikly-v-python</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/testy/test-uslovnye-operatory-i-logicheskie-vyrazheniya-v-python</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/testy/test-funkcii-v-python</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/testy/test-spiski-v-python</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/testy/test-mnozhestva-i-kortezhi-v-python</loc>
-    
-            </url>
-    <url>
-        <loc>https://info-lab-edu.ru/pages/testy/test-slovari-v-python</loc>
-    
-            </url>
+  <url>
+    <loc>https://info-lab-edu.ru/</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/activity/normal-algo</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/activity/brython-interpreter</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/laboratornye/slovari</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/activity/game-of-life</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/o-saite</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/activity/turing-machine</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/laboratornye/mnozhestva-i-kortezhi</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/activity/base-convert</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/laboratornye/spiski</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/laboratornye/funkcii</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/laboratornye/cikly</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/laboratornye</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/laboratornye/uslovnye-operatory-i-logicheskie-vyrazheniya</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/funkcii-2</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/uslovnye-operatory-i-logiceskie-vyrazeniia</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/laboratornye/hello-world</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/elektronnye-obrazovatelnye-resursy</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/cikly-2</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/pervye-shagi</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/testy</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/testy/test-slovari-v-python</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/testy/test-spiski-v-python</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/testy/test-cikly-v-python</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/testy/test-funkcii-v-python</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/testy/test-uslovnye-operatory-i-logicheskie-vyrazheniya-v-python</loc>
+  </url>
+  <url>
+    <loc>https://info-lab-edu.ru/pages/testy/test-mnozhestva-i-kortezhi-v-python</loc>
+  </url>
 </urlset>

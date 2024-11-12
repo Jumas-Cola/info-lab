@@ -4,22 +4,24 @@
     <meta charset="utf-8">
     <meta name="description" content="{{ $description ?? $title ?? config('app.name', 'Laravel') }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="{{ config('app.url') }}/favicon.ico" type="image/x-icon">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="120x120" href="/favicon-120x120.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
 
     <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
 
 
     @vite(['resources/css/app.scss'])
 
-    <!-- Additional CSS Files -->
-    <!-- <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> -->
     <!--
+        TemplateMo 586 Scholar
 
-TemplateMo 586 Scholar
-
-https://templatemo.com/tm-586-scholar
-
--->
+        https://templatemo.com/tm-586-scholar
+    -->
 </head>
 
 <body>
@@ -52,12 +54,6 @@ https://templatemo.com/tm-586-scholar
     <x-nav.footer />
 
     <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-    <!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
-    <!-- <script src="assets/js/isotope.min.js"></script> -->
-    <!-- <script src="assets/js/owl-carousel.js"></script> -->
-    <!-- <script src="assets/js/counter.js"></script> -->
-    <!-- <script src="assets/js/custom.js"></script> -->
     @vite(['resources/js/app.js'])
 
 </body>
