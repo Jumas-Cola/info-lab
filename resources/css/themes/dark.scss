@@ -20,4 +20,10 @@ $color-mode-type: data;
   .events .section-heading h2 {
     color: rgba(var(--bs-light-rgb)) !important;
   }
+
+  @media (max-width: 992px) {
+    .page-main-content > .about-us .section-heading {
+      color: #fff;
+    }
+  }
 }
