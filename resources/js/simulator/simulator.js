@@ -57,13 +57,11 @@ export function preload() {
  */
 export function setup() {
   const canvHeight = windowHeight - 90;
-  let canvasWidth = 0;
-  if (windowWidth < 500) {
-    canvasWidth = windowWidth - 155;
-  } else if (windowWidth < 700) {
+  let canvasWidth = windowWidth - 315;
+  if (windowWidth < 700) {
     canvasWidth = windowWidth - 215;
-  } else {
-    canvasWidth = windowWidth - 315;
+  } else if (windowWidth < 500) {
+    canvasWidth = windowWidth - 155;
   }
   let canvas = createCanvas(canvasWidth, canvHeight, P2D);
 
