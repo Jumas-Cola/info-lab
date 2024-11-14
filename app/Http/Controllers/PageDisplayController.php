@@ -28,7 +28,7 @@ class PageDisplayController extends Controller
         $pages = $pages->orderBy('position')
             ->paginate();
 
-        $tagsCloud = Tag::orderBy('count', 'desc')->limit(30)->get(['id', 'name']);
+        $tagsCloud = Tag::orderBy('count', 'desc')->where('count', '!=', 0)->limit(30)->get(['id', 'name']);
 
         return view('site.page.index', [
             'pages' => $pages,
