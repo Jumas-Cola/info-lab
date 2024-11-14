@@ -12,6 +12,11 @@
     "src": "resources/css/app.scss",
     "isEntry": true
   },
+  "resources/css/simulator/simstyle.css": {
+    "file": "assets/simstyle-nOmU_zkR.css",
+    "src": "resources/css/simulator/simstyle.css",
+    "isEntry": true
+  },
   "resources/fonts/fa-brands-400.ttf": {
     "file": "assets/fa-brands-400-BHzRODKu.ttf",
     "src": "resources/fonts/fa-brands-400.ttf"
@@ -176,12 +181,100 @@
     "file": "assets/service-03-DiAbeWhk.png",
     "src": "resources/images/service-03.png"
   },
+  "resources/images/simulator/AND.svg": {
+    "file": "assets/AND-Dj6rWTSv.svg",
+    "src": "resources/images/simulator/AND.svg"
+  },
+  "resources/images/simulator/Clock.svg": {
+    "file": "assets/Clock-BFTUnhSt.svg",
+    "src": "resources/images/simulator/Clock.svg"
+  },
+  "resources/images/simulator/FF_D.svg": {
+    "file": "assets/FF_D-Bke9ZLDO.svg",
+    "src": "resources/images/simulator/FF_D.svg"
+  },
+  "resources/images/simulator/FF_D_MS.svg": {
+    "file": "assets/FF_D_MS-eYf0I0-a.svg",
+    "src": "resources/images/simulator/FF_D_MS.svg"
+  },
+  "resources/images/simulator/FF_JK.svg": {
+    "file": "assets/FF_JK-CyCNqYhm.svg",
+    "src": "resources/images/simulator/FF_JK.svg"
+  },
+  "resources/images/simulator/FF_T.svg": {
+    "file": "assets/FF_T-CjeVMDAB.svg",
+    "src": "resources/images/simulator/FF_T.svg"
+  },
+  "resources/images/simulator/LogicInput.png": {
+    "file": "assets/LogicInput-Dfv21why.png",
+    "src": "resources/images/simulator/LogicInput.png"
+  },
+  "resources/images/simulator/LogicInput.svg": {
+    "file": "assets/LogicInput-DQW8fmdM.svg",
+    "src": "resources/images/simulator/LogicInput.svg"
+  },
+  "resources/images/simulator/LogicOutput.png": {
+    "file": "assets/LogicOutput-B-6O3ja4.png",
+    "src": "resources/images/simulator/LogicOutput.png"
+  },
+  "resources/images/simulator/LogicOutput.svg": {
+    "file": "assets/LogicOutput-CtOyUhPl.svg",
+    "src": "resources/images/simulator/LogicOutput.svg"
+  },
+  "resources/images/simulator/NAND.svg": {
+    "file": "assets/NAND-DwcYmDUB.svg",
+    "src": "resources/images/simulator/NAND.svg"
+  },
+  "resources/images/simulator/NOR.svg": {
+    "file": "assets/NOR-BnoDjwLR.svg",
+    "src": "resources/images/simulator/NOR.svg"
+  },
+  "resources/images/simulator/NOT.svg": {
+    "file": "assets/NOT-1t5SPu-A.svg",
+    "src": "resources/images/simulator/NOT.svg"
+  },
+  "resources/images/simulator/OR.svg": {
+    "file": "assets/OR-iGgT2ZRs.svg",
+    "src": "resources/images/simulator/OR.svg"
+  },
+  "resources/images/simulator/SR_Latch.svg": {
+    "file": "assets/SR_Latch-BGYJDW3Z.svg",
+    "src": "resources/images/simulator/SR_Latch.svg"
+  },
+  "resources/images/simulator/SR_Latch_Sync.svg": {
+    "file": "assets/SR_Latch_Sync-fe9o23iv.svg",
+    "src": "resources/images/simulator/SR_Latch_Sync.svg"
+  },
+  "resources/images/simulator/XNOR.svg": {
+    "file": "assets/XNOR-COqKfIhK.svg",
+    "src": "resources/images/simulator/XNOR.svg"
+  },
+  "resources/images/simulator/XOR.svg": {
+    "file": "assets/XOR-Dqexxd3j.svg",
+    "src": "resources/images/simulator/XOR.svg"
+  },
+  "resources/images/simulator/hand.png": {
+    "file": "assets/hand-AqaOFfGV.png",
+    "src": "resources/images/simulator/hand.png"
+  },
+  "resources/images/simulator/openhand.svg": {
+    "file": "assets/openhand-DWQ41LG6.svg",
+    "src": "resources/images/simulator/openhand.svg"
+  },
+  "resources/images/simulator/pencil.svg": {
+    "file": "assets/pencil-BbT7iu6p.svg",
+    "src": "resources/images/simulator/pencil.svg"
+  },
+  "resources/images/simulator/trashcan.svg": {
+    "file": "assets/trashcan-Dp1ibx9q.svg",
+    "src": "resources/images/simulator/trashcan.svg"
+  },
   "resources/images/testimonial-author.jpg": {
     "file": "assets/testimonial-author-CfixK5Z8.jpg",
     "src": "resources/images/testimonial-author.jpg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-CnMKxXx3.js",
+    "file": "assets/app-DiuBR-Pe.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -219,5 +312,27 @@
     "name": "codemirror",
     "src": "resources/js/codemirror.js",
     "isEntry": true
+  },
+  "resources/js/simulator/simulator.js": {
+    "file": "assets/simulator-BVPfuyxu.js",
+    "name": "simulator",
+    "src": "resources/js/simulator/simulator.js",
+    "isEntry": true,
+    "assets": [
+      "assets/LogicInput-DQW8fmdM.svg",
+      "assets/NOT-1t5SPu-A.svg",
+      "assets/AND-Dj6rWTSv.svg",
+      "assets/NAND-DwcYmDUB.svg",
+      "assets/OR-iGgT2ZRs.svg",
+      "assets/NOR-BnoDjwLR.svg",
+      "assets/XOR-Dqexxd3j.svg",
+      "assets/XNOR-COqKfIhK.svg",
+      "assets/SR_Latch-BGYJDW3Z.svg",
+      "assets/SR_Latch_Sync-fe9o23iv.svg",
+      "assets/FF_D-Bke9ZLDO.svg",
+      "assets/FF_D_MS-eYf0I0-a.svg",
+      "assets/FF_T-CjeVMDAB.svg",
+      "assets/FF_JK-CyCNqYhm.svg"
+    ]
   }
 }

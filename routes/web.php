@@ -11,6 +11,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TestCheckController;
 use App\Http\Controllers\TuringMachineController;
 use App\Http\Controllers\AiTeacherController;
+use App\Http\Controllers\LogicCircuitController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
@@ -30,6 +31,10 @@ Route::prefix('activity')->name('activity.')->group(function () {
 
     Route::get('brython-interpreter', [BrythonController::class, 'index'])
         ->name('brython-interpreter');
+
+    Route::get('logic-circuit', [LogicCircuitController::class, 'index'])
+        ->name('logic-circuit');
+
 
     /*Route::get('ai-teacher', [AiTeacherController::class, 'index'])*/
     /*    ->name('ai-teacher');*/

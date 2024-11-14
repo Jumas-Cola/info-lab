@@ -40,3 +40,6 @@ import python from 'highlight.js/lib/languages/python';
 hljs.registerLanguage('python', python);
 
 window.hljs = hljs;
+
+import p5 from 'p5';
+window.p5 = p5;
