@@ -57,7 +57,7 @@ export function preload() {
  */
 export function setup() {
   const canvHeight = windowHeight - 90;
-  const canvasWidth = windowWidth * 0.75;
+  const canvasWidth = Math.max(windowWidth * 0.75, 1500);
   let canvas = createCanvas(canvasWidth, canvHeight, P2D);
 
   canvas.parent('canvas-sim');

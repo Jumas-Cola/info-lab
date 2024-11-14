@@ -258,7 +258,7 @@
     "src": "resources/images/simulator/hand.png"
   },
   "resources/images/simulator/openhand.svg": {
-    "file": "assets/openhand-BqKsOpwG.svg",
+    "file": "assets/openhand-DWQ41LG6.svg",
     "src": "resources/images/simulator/openhand.svg"
   },
   "resources/images/simulator/pencil.svg": {
@@ -314,7 +314,7 @@
     "isEntry": true
   },
   "resources/js/simulator/simulator.js": {
-    "file": "assets/simulator-OoWcS2fe.js",
+    "file": "assets/simulator-BTqQ5URn.js",
     "name": "simulator",
     "src": "resources/js/simulator/simulator.js",
     "isEntry": true,

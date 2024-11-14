@@ -52,8 +52,8 @@
         </nav>
         <!-- Begin page content -->
 
-        <div class="container-fluid pt-3">
-            <div class="row">
+        <div class="container-fluid overflow-scroll pt-3">
+            <div class="row" style="min-width: 1500px;">
                 <div class="tools col overflow-scroll" style="overflow-y: scroll;height: calc(100vh - 5rem);">
                     <div class="list-group float-right" style="min-width: 50px; max-width: 60px">
                         <button type="button" tool="LogicInput" title="Logic Input" onclick="activeTool(this)"
