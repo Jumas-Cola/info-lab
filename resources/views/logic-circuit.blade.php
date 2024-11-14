@@ -57,19 +57,19 @@
                 <div class="tools col overflow-scroll" style="overflow-y: scroll;height: calc(100vh - 5rem);">
                     <div class="list-group float-right" style="min-width: 50px; max-width: 60px">
                         <button type="button" tool="LogicInput" title="Logic Input" onclick="activeTool(this)"
-                            class="list-group-item list-group-item-action pl-1">
+                            class="text-center list-group-item list-group-item-action pl-1">
                             ВХОД
                             <img src="{{ Vite::asset('resources/images/simulator/LogicInput.svg') }}" class="ml-2"
                                 width="32">
                         </button>
                         <button type="button" tool="LogicOutput" title="Logic Output" onclick="activeTool(this)"
-                            class="list-group-item list-group-item-action pl-1">
+                            class="text-center list-group-item list-group-item-action pl-1">
                             ВЫХОД
                             <img src="{{ Vite::asset('resources/images/simulator/LogicOutput.svg') }}" class="ml-2"
                                 width="32">
                         </button>
                         <button type="button" data-bs-toggle="modal" data-bs-target="#ClockSettings"title="Clock"
-                            class="list-group-item list-group-item-action pl-1">
+                            class="text-center list-group-item list-group-item-action pl-1">
                             ТАЙМЕР
                             <img src="{{ Vite::asset('resources/images/simulator/Clock.svg') }}" width="50">
                         </button>
@@ -84,27 +84,27 @@
                             <img src="{{ Vite::asset('resources/images/simulator/AND.svg') }}" width="50">
                         </button>
                         <button type="button" tool="NAND" isGate="true" onclick="activeTool(this)"
-                            class="list-group-item list-group-item-action pl-1">
+                            class="text-center list-group-item list-group-item-action pl-1">
                             НЕ И
                             <img src="{{ Vite::asset('resources/images/simulator/NAND.svg') }}" width="50">
                         </button>
                         <button type="button" tool="OR" isGate="true" onclick="activeTool(this)"
-                            class="list-group-item list-group-item-action pl-1">
+                            class="text-center list-group-item list-group-item-action pl-1">
                             ИЛИ
                             <img src="{{ Vite::asset('resources/images/simulator/OR.svg') }}" width="50">
                         </button>
                         <button type="button" tool="NOR" isGate="true" onclick="activeTool(this)"
-                            class="list-group-item list-group-item-action pl-1">
+                            class="text-center list-group-item list-group-item-action pl-1">
                             НЕ ИЛИ
                             <img src="{{ Vite::asset('resources/images/simulator/NOR.svg') }}" width="50">
                         </button>
                         <button type="button" tool="XOR" isGate="true" onclick="activeTool(this)"
-                            class="list-group-item list-group-item-action pl-1">
+                            class="text-center list-group-item list-group-item-action pl-1">
                             ИСКЛЮЧАЮЩЕ ИЛИ
                             <img src="{{ Vite::asset('resources/images/simulator/XOR.svg') }}" width="50">
                         </button>
                         <button type="button" tool="XNOR" isGate="true" onclick="activeTool(this)"
-                            class="list-group-item list-group-item-action pl-1">
+                            class="text-center list-group-item list-group-item-action pl-1">
                             ИСКЛЮЧАЮЩЕ НЕ ИЛИ
                             <img src="{{ Vite::asset('resources/images/simulator/XNOR.svg') }}" width="50">
                         </button>

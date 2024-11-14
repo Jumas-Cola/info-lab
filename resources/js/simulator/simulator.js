@@ -57,18 +57,432 @@ export function preload() {
  */
 export function setup() {
   const canvHeight = windowHeight - 90;
-  let canvasWidth = windowWidth - 315;
-  if (windowWidth < 700) {
-    canvasWidth = windowWidth - 215;
-  } else if (windowWidth < 500) {
-    canvasWidth = windowWidth - 155;
-  }
+  const canvasWidth = windowWidth * 0.75;
   let canvas = createCanvas(canvasWidth, canvHeight, P2D);
 
   canvas.parent('canvas-sim');
   document.getElementsByClassName('tools')[0].style.height = canvHeight;
 
   wireMng = new WireManager();
+
+  fileManager.loadString(`
+{
+	"logicInput": [
+		{
+			"value": 0,
+			"posX": 64.5,
+			"posY": 72,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 7,
+			"offsetMouseY": 7,
+			"nodeStartID": 0,
+			"isSaved": true
+		},
+		{
+			"value": 0,
+			"posX": 70.5,
+			"posY": 241,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 3,
+			"offsetMouseY": 6,
+			"nodeStartID": 1,
+			"isSaved": true
+		},
+		{
+			"value": 0,
+			"posX": 60.5,
+			"posY": 408,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": -6,
+			"offsetMouseY": 5,
+			"nodeStartID": 2,
+			"isSaved": true
+		}
+	],
+	"logicOutput": [
+		{
+			"value": 0,
+			"posX": 1384.5,
+			"posY": 436,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": -7,
+			"offsetMouseY": 1,
+			"nodeStartID": 34,
+			"isSaved": true
+		},
+		{
+			"value": false,
+			"posX": 1278.5,
+			"posY": 435,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 2,
+			"offsetMouseY": -3,
+			"nodeStartID": 35,
+			"isSaved": true
+		}
+	],
+	"flipflop": [],
+	"logicClock": [],
+	"gate": [
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": -328.5,
+			"posY": 280,
+			"isSpawned": true,
+			"offsetMouseX": -64,
+			"offsetMouseY": -27,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 3
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 229.5,
+			"posY": 153,
+			"isSpawned": true,
+			"offsetMouseX": -64,
+			"offsetMouseY": -17,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 6
+		},
+		{
+			"strType": "NOT",
+			"type": 1,
+			"width": 100,
+			"height": 50,
+			"posX": 372.5,
+			"posY": 154,
+			"isSpawned": true,
+			"offsetMouseX": -32,
+			"offsetMouseY": -10,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 9
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 511.5,
+			"posY": 48,
+			"isSpawned": true,
+			"offsetMouseX": -57,
+			"offsetMouseY": -21,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 11
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 519.5,
+			"posY": 244,
+			"isSpawned": true,
+			"offsetMouseX": -37,
+			"offsetMouseY": -21,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 14
+		},
+		{
+			"strType": "OR",
+			"type": 4,
+			"width": 100,
+			"height": 50,
+			"posX": 724.5,
+			"posY": 134,
+			"isSpawned": true,
+			"offsetMouseX": -96,
+			"offsetMouseY": -18,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 17
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 749.5,
+			"posY": 313,
+			"isSpawned": true,
+			"offsetMouseX": -56,
+			"offsetMouseY": -22,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 20
+		},
+		{
+			"strType": "NOT",
+			"type": 1,
+			"width": 100,
+			"height": 50,
+			"posX": 892.5,
+			"posY": 312,
+			"isSpawned": true,
+			"offsetMouseX": -38,
+			"offsetMouseY": -36,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 23
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 969.5,
+			"posY": 157,
+			"isSpawned": true,
+			"offsetMouseX": -37,
+			"offsetMouseY": -27,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 25
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 1008.5,
+			"posY": 441,
+			"isSpawned": true,
+			"offsetMouseX": -43,
+			"offsetMouseY": -9,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 28
+		},
+		{
+			"strType": "OR",
+			"type": 4,
+			"width": 100,
+			"height": 50,
+			"posX": 1151.5,
+			"posY": 278,
+			"isSpawned": true,
+			"offsetMouseX": -42,
+			"offsetMouseY": -23,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 31
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 484.5,
+			"posY": 591,
+			"isSpawned": true,
+			"offsetMouseX": -53,
+			"offsetMouseY": -11,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 36
+		},
+		{
+			"strType": "NOT",
+			"type": 1,
+			"width": 100,
+			"height": 50,
+			"posX": 630.5,
+			"posY": 591,
+			"isSpawned": true,
+			"offsetMouseX": -37,
+			"offsetMouseY": -20,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 39
+		}
+	],
+	"srLatch": [],
+	"wire": [
+		{
+			"startID": 0,
+			"endID": 6,
+			"endX": 144.5,
+			"endY": 63,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 7,
+			"endX": 138.5,
+			"endY": 219,
+			"width": 8
+		},
+		{
+			"startID": 8,
+			"endID": 9,
+			"endX": 317.5,
+			"endY": 139,
+			"width": 8
+		},
+		{
+			"startID": 0,
+			"endID": 11,
+			"endX": 141.5,
+			"endY": 66,
+			"width": 8
+		},
+		{
+			"startID": 10,
+			"endID": 12,
+			"endX": 488.5,
+			"endY": 182,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 15,
+			"endX": 133.5,
+			"endY": 215,
+			"width": 8
+		},
+		{
+			"startID": 10,
+			"endID": 14,
+			"endX": 492.5,
+			"endY": 179,
+			"width": 8
+		},
+		{
+			"startID": 13,
+			"endID": 17,
+			"endX": 632.5,
+			"endY": 71,
+			"width": 8
+		},
+		{
+			"startID": 16,
+			"endID": 18,
+			"endX": 632.5,
+			"endY": 268,
+			"width": 8
+		},
+		{
+			"startID": 22,
+			"endID": 23,
+			"endX": 1010.5,
+			"endY": 349,
+			"width": 8
+		},
+		{
+			"startID": 33,
+			"endID": 34,
+			"endX": 1311.5,
+			"endY": 308,
+			"width": 8
+		},
+		{
+			"startID": 27,
+			"endID": 31,
+			"endX": 1185.5,
+			"endY": 216,
+			"width": 8
+		},
+		{
+			"startID": 30,
+			"endID": 32,
+			"endX": 1265.5,
+			"endY": 428,
+			"width": 8
+		},
+		{
+			"startID": 19,
+			"endID": 25,
+			"endX": 824.5,
+			"endY": 157,
+			"width": 8
+		},
+		{
+			"startID": 19,
+			"endID": 20,
+			"endX": 820.5,
+			"endY": 152,
+			"width": 8
+		},
+		{
+			"startID": 24,
+			"endID": 26,
+			"endX": 1083.5,
+			"endY": 331,
+			"width": 8
+		},
+		{
+			"startID": 24,
+			"endID": 28,
+			"endX": 1081.5,
+			"endY": 328,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 21,
+			"endX": 136.5,
+			"endY": 476,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 29,
+			"endX": 131.5,
+			"endY": 479,
+			"width": 8
+		},
+		{
+			"startID": 40,
+			"endID": 35,
+			"endX": 1234.5,
+			"endY": 637,
+			"width": 8
+		},
+		{
+			"startID": 10,
+			"endID": 37,
+			"endX": 476.5,
+			"endY": 180,
+			"width": 8
+		},
+		{
+			"startID": 38,
+			"endID": 39,
+			"endX": 1144.5,
+			"endY": 538,
+			"width": 8
+		},
+		{
+			"startID": 24,
+			"endID": 36,
+			"endX": 1083.5,
+			"endY": 328,
+			"width": 8
+		}
+	]
+}
+`);
 }
 
 /**
