@@ -1,7 +1,7 @@
 <form id="search" x-data="search" action="#">
     <input type="text" placeholder="Поиск" id='searchText' x-model.throttle.500ms="query" />
     <i class="fa fa-search"></i>
-    <div class="dropdown">
+    <div x-cloak class="dropdown">
         <ul id="searchResults" class="dropdown-menu show" x-show="searchResults.length > 0">
             <template x-for="searchResult in searchResults">
                 <li :key="searchResult.title">

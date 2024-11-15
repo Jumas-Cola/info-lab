@@ -3,7 +3,7 @@
         <i class="fas fa-comment"></i>
     </button>
 
-    <div x-show="formAiShow" class="chat-popup bg-body-tertiary p-3 rounded shadow" x-transition>
+    <div x-cloak x-show="formAiShow" class="chat-popup bg-body-tertiary p-3 rounded shadow" x-transition>
         <x-page.ai-chat />
     </div>
 </div>

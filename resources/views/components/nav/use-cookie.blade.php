@@ -1,5 +1,5 @@
 <div x-data="useCookie">
-    <div x-show.important="useCookieShow"
+    <div x-cloak x-show.important="useCookieShow"
         class="position-fixed bottom-0 end-0 p-3 w-100 bg-primary fs-5 text-white d-flex justify-content-center"
         style="z-index: 5;">
 
